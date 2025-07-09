@@ -10,7 +10,7 @@ import AnimatedBackground from '@/components/AnimatedBackground';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative">
+    <div className="min-h-screen bg-gradient-to-br from-gradient-yellow-dark via-gradient-yellow-mid to-gradient-yellow-dark relative">
       <AnimatedBackground />
       <div className="relative z-10">
         <Navigation />

@@ -50,7 +50,7 @@ export const userInfo = {
         "role": "School of Engineering",
         "period": "Sep 2022 – Dec 2026",
         "description": "Served as chief student representative for School of Engineering, managing public relations and outreach initiatives for prospective students, parents, internal and external high profile figures",
-        "link": "https://seng.hkust.edu.hk/about/our-People/engineering-student-ambassadors",
+        "link": "https://seng.hkust.edu.hk/about/student-ambassadors/8702",
         "image": "/src/assets/SENG.png"
       },
       {
