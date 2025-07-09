@@ -31,7 +31,7 @@ const Projects = () => {
     <section id="projects" className="py-20 relative">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl md:text-6xl font-bold text-white mb-12 text-center">
-          Featured Projects
+          Professional Awards
         </h2>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">

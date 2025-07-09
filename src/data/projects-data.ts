@@ -1,9 +1,9 @@
 export const projectsData = [
     {
-        title: "Kiran",
+        title: "BNP Paribas Sustainable Finance 2025",
         description: "A platform connecting blood donors with patients to improve accessibility and transparency in blood donation.",
         longDescription: "Strategized and led development of a comprehensive healthcare platform that bridges the gap between blood donors and patients in need. The platform features real-time blood inventory tracking, donor-patient matching algorithms, emergency notification systems, and transparent donation tracking to build trust in the blood donation ecosystem.",
-        role: "Founder and Developer",
+        role: "Champion",
         technologies: ["React", "Tailwind", "Node.js", "AWS", "Google Cloud"],
         period: "Aug 2024 – Present",
         link: "https://kiran.ngo/",
@@ -12,10 +12,10 @@ export const projectsData = [
         status: "Active"
     },
     {
-        title: "USThing",
+        title: "Oliver Wyman Case Competition 2025",
         description: "A mobile application for HKUST students to access their course materials, timetables, and more.",
         longDescription: "Leading a team of 50+ students to restructure HKUST's most-used mobile application, serving over 8,000+ users across Android and iOS  .",
-        role: "President",
+        role: "1st Runner Up",
         technologies: ["React Native", "Node.js", "Express", "MongoDB"],
         period: "May 2023 – Present",
         link: "https://www.usthing.xyz/",
@@ -24,10 +24,10 @@ export const projectsData = [
         status: "Active"
     },
     {
-        title: "KarKaram",
+        title: "BOCHK Challenge 2024",
         description: "A crowdfunding platform for Pakistani NGOs connecting donors with cause areas they care most about.",
         longDescription: "KarKaram is a crowdfunding platform for Pakistani NGOs. It allows NGOs to create campaigns and raise funds for their projects where each campaign is verified and tracked by our team.",
-        role: "Founder and Developer",
+        role: "1st Runner Up",
         technologies: ["React", "Node.js", "AWS", "MongoDB"],
         period: "Jan 2025 – Present",
         link: "https://karkaram-frontend.vercel.app/",
