@@ -35,7 +35,7 @@ const Hero = () => {
               className="px-8 py-4 border-2 border-cyan-500 text-cyan-400 rounded-full font-semibold hover:bg-cyan-500 hover:text-white transition-all duration-300"
               onClick={() => window.open(CVFile, '_blank')}
             >
-              Boring Ass CV
+              Thien Zhi CV
             </button>
           </div>
         </div>
