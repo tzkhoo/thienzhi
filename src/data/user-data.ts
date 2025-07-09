@@ -26,13 +26,13 @@ export const userInfo = {
     ],
     "work_experience": [
       {
-        "company": "Cracked Engineers- Startup Sprint",
-        "role": "Founder and Developer",
+        "company": "Bindo Labs - Wonder",
+        "role": "Data Engineering Analyst",
         "period": "Jun 2025 – Present",
         "responsibilities": [
-          "Behave Yourself: AAI-powered behavioural interviewer for startups to help them find the right candidates for their startups.",
-          "Amploy: Automated Employ- Job Application Automation Extension",
-          "Matiq: LLM Powered PhotoMath Replacemnt",
+          "AI Agent: Developed a WhatsApp AI agent utilizing RAG to deliver accurate agentic workflows and enhance user engagement.",
+          "Chatbot: Created a chatbot for live website interactions and email inquiries, automating customer support and improving response times.",
+          "Business",
         ]
       },
       {
