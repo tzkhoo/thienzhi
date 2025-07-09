@@ -4,7 +4,7 @@ import { userInfo } from "@/data/user-data";
 
 // Import local university logos
 import HKUSTLogo from "@/assets/HKUST.png";
-import UBCLogo from "@/assets/DTU_Logo.jpg";
+import UBCLogo from "@/assets/UBC.png";
 
 const Education = () => {
   const getLogoSrc = (logoPath: string, universityName: string) => {
