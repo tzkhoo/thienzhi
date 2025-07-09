@@ -46,27 +46,27 @@ export const userInfo = {
 
     "co_curricular_activities": [
       {
-        "title": "Head Engineering Student Ambassador",
-        "role": "Senior Member",
+        "title": "Head Student Ambassador",
+        "role": "School of Engineering",
         "period": "June 2023 – June 2026",
-        "description": "Served as chief student representative for School of Engineering, managing public relations and outreach initiatives for prospective students, parents, internal and external high profile figures.",
+        "description": "Chief student representative managing public relations and outreach initiatives for prospective students, parents, internal and external high profile figures.",
         "link": "https://seng.hkust.edu.hk/about/student-ambassadors/8702",
         "image": "/src/assets/seng.jpeg"
       },
       {
-        "title": "HKUST Affinity",
-        "role": "Founder and President",
-        "period": "Sep 2024 – Present",
-        "description": "Building a community of students who are passionate about technology and entrepreneurship.",
-        "link": "https://www.usthing.xyz/",
+        "title": "Engineering Peer Mentor",
+        "role": "Mentor",
+        "period": "Jan 2023 – Feb 2026",
+        "description": "Building a community for engineering students and supporting them in navigating academics and social challenges in university life",
+        "link": "https://seng.hkust.edu.hk/about/our-People/peer-mentors",
         "image": "/src/assets/Affinity.png"
       },
       {
-        "title": "Project Melo",
-        "role": "Social Member",
+        "title": "HKUST Spark Global",
+        "role": "Senior Leader",
         "period": "Sep 2023 – Present",
-        "description": "Contributed to youth empowerment and societal impact initiatives, fostering collaboration among leaders and innovators.",
-        "link": "https://www.projectmelo.com/",
+        "description": "Active organizer of university events that promotes the culture, places and diversity of Hong Kong.",
+        "link": "https://studyabroad.hkust.edu.hk/hkustsparkglobal",
         "image": "/src/assets/Project Melo.jpg"
       }
     ],
@@ -107,7 +107,7 @@ export const userInfo = {
       "tools_services": ["MongoDB", "AWS", "Vercel", "Google Cloud"],
       "general": ["Microsoft Office", "Canva"]
     },
-    "languages": ["English (Fluent)", "Urdu (Native)", "Hindi (Fluent)"],
+    "languages": ["English (Native))", "Mandarin (Native)", "Hindi (Fluent)"],
     "resume_path": "CV_Attachments/Shahman Ali CV.pdf",
     "email_template": {
         "subject_template": "Application for {job_title} position at {company}",
