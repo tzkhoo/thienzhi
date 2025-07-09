@@ -26,7 +26,7 @@ export const userInfo = {
     ],
     "work_experience": [
       {
-        "company": "Bindo Labs - Wonder"
+        "company": "Bindo Labs - Wonder",
         "role": "Data Engineering Analyst",
         "period": "Jun 2025 – Present",
         "responsibilities": [
