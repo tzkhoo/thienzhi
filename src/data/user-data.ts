@@ -40,10 +40,10 @@ export const userInfo = {
         "role": "Business Development Analyst",
         "period": "Jun 2024 – Aug 2024",
         "responsibilities": [
-          "Conduct market research and analysis for HK edtech industry, facilitated strategic proposals for market
-expansion into Asia, and generating business leads through B2B and B2C marketing",
+          "Conduct market research and analysis for HK edtech industry, facilitated strategic proposals for market expansion into Asia, and generating business leads through B2B and B2C marketing",
         ]
-      },
+      }],
+
     "co_curricular_activities": [
       {
         "title": "HKUST Robotics Team",
