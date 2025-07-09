@@ -48,10 +48,10 @@ export const userInfo = {
       {
         "title": "Head Engineering Student Ambassador",
         "role": "Senior Member",
-        "period": "Sep 2022 – Dec 2023",
+        "period": "June 2023 – June 2026",
         "description": "Served as chief student representative for School of Engineering, managing public relations and outreach initiatives for prospective students, parents, internal and external high profile figures.",
         "link": "https://seng.hkust.edu.hk/about/student-ambassadors/8702",
-        "image": "/src/assets/Robotics Team.png"
+        "image": "/src/assets/seng.jpeg"
       },
       {
         "title": "HKUST Affinity",
