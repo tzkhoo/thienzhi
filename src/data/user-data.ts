@@ -2,26 +2,26 @@ export const userInfo = {
     "name": "Khoo Thien Zhi",
     "contact": {
       "phone": "+852 44924712",
-      "email": "saliac@connect.ust.hk",
+      "email": "tzkhoo@connect.ust.hk",
       "linkedin": "https://www.linkedin.com/in/shahman-ali/",
       "CV": "/src/assets/Shahman_CV.pdf"
     },
-    "summary_1": "Part-Time Building, Full Time Dad-Jokes",
+    "summary_1": "Coding the future. Bridging Consulting and AI for impact.",
     "summary_2": "Only the ones crazy enough to think they can change the world are the ones who do",
     "education": [
       {
         "university": "The Hong Kong University of Science and Technology",
         "degree": "Bachelors of Engineering",
-        "major": "Computer Science",
+        "major": "Computer Engineering",
         "graduation_date": "May 2026",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/3/3a/Hong_Kong_University_of_Science_and_Technology_Logo.svg/1200px-Hong_Kong_University_of_Science_and_Technology_Logo.svg.png"
       },
       {
-        "university": "University of British Columbia",
+        "university": "Technical University of Denmark",
         "degree": "Exchange Program",
         "major": "Computer Science and Business",
         "graduation_date": "Dec 2024",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/University_of_British_Columbia_coat_of_arms.svg/1200px-University_of_British_Columbia_coat_of_arms.svg.png"
+        "logo": "https://en.wikipedia.org/wiki/File:Danmarks_Tekniske_Universitet_(logo).svg"
       }
     ],
     "work_experience": [
