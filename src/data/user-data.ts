@@ -3,7 +3,7 @@ export const userInfo = {
     "contact": {
       "phone": "+852 44924712",
       "email": "tzkhoo@connect.ust.hk",
-      "linkedin": "https://www.linkedin.com/in/shahman-ali/",
+      "linkedin": "https://www.linkedin.com/in/thienzhi/",
       "CV": "/src/assets/Shahman_CV.pdf"
     },
     "summary_1": "Coding the future. Bridging Consulting and AI for impact.",
