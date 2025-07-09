@@ -108,7 +108,7 @@ export const userInfo = {
       "general": ["Microsoft Office", "Canva"]
     },
     "languages": ["English (Native)", "Mandarin (Fluent)", "Cantonese (Conversational)", "Malay (Conversational)"],
-    "resume_path": "CV_Attachments/Shahman Ali CV.pdf",
+    "resume_path": "/src/assets/ThienZhi_CV.pdf",
     "email_template": {
         "subject_template": "Application for {job_title} position at {company}",
         "body_template": "Dear Hiring Manager,\n\nI am writing to express my interest in the {job_title} position at {company}. I am a {education.degree} student in {education.major} at {education.university}, expected to graduate in {education.graduation_date}.\n\nI believe my experience and skills make me a strong candidate for this role. [Add personalized content based on the job description]\n\nAttached, please find my resume for your consideration. I look forward to the opportunity to discuss how my background aligns with your needs.\n\nThank you for your time and consideration.\n\nSincerely,\n{name}\n{email}\n{phone}"
