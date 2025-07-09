@@ -6,7 +6,7 @@ export const userInfo = {
       "linkedin": "https://www.linkedin.com/in/thienzhi/",
       "CV": "/src/assets/ThienZhi_CV.pdf"
     },
-    "summary_1": "Coding the future. Bridging Consulting and AI for impact.",
+    "summary_1": "Coding the future. Consulting and tech.",
     "summary_2": "Only the ones crazy enough to think they can change the world are the ones who do",
     "education": [
       {
@@ -51,7 +51,7 @@ export const userInfo = {
         "period": "June 2023 – June 2026",
         "description": "Chief student representative managing public relations and outreach initiatives for prospective students, parents, internal and external high profile figures.",
         "link": "https://seng.hkust.edu.hk/about/student-ambassadors/8702",
-        "image": "/src/assets/seng.jpeg"
+        "image": "/src/assets/seng.png"
       },
       {
         "title": "Engineering Peer Mentor",
