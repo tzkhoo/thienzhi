@@ -1,14 +1,14 @@
 import { userInfo } from "@/data/user-data";
 
 // Import local images
-import SengImg from "@/assets/seng.jpeg";
+import SengImg from "@/assets/seng.png";
 import PmpImg from "@/assets/pmp.png";
 import SgImg from "@/assets/sg.png";
 
 const Extracurricular = () => {
   const getImageSrc = (imagePath: string) => {
     // Handle local asset pathsre
-    if (imagePath.includes('seng.jpeg')) return SengImg;
+    if (imagePath.includes('seng.png')) return SengImg;
     if (imagePath.includes('pmp.png')) return PmpImg;
     if (imagePath.includes('sg.png')) return SgImg;
     // Return external URLs as-is
