@@ -3,7 +3,7 @@ export const userInfo = {
     "contact": {
       "phone": "+852 44924712",
       "email": "tzkhoo@connect.ust.hk",
-      "linkedin": "https://www.linkedin.com/in/shahman-ali/",
+      "linkedin": "https://www.linkedin.com/in/thienzhi/",
       "CV": "/src/assets/Shahman_CV.pdf"
     },
     "summary_1": "Coding the future. Bridging Consulting and AI for impact.",
@@ -26,12 +26,12 @@ export const userInfo = {
     ],
     "work_experience": [
       {
-        "company": "Cracked Engineers- Startup Sprint",
-        "role": "Founder and Developer",
+        "company": "Bindo Labs - Wonder"
+        "role": "Data Engineering Analyst",
         "period": "Jun 2025 – Present",
         "responsibilities": [
-          "Behave Yourself: AAI-powered behavioural interviewer for startups to help them find the right candidates for their startups.",
-          "Amploy: Automated Employ- Job Application Automation Extension",
+          "AI Agent: Developed a WhatsApp AI Agent utilizing RAG to deliver accurate agentic workflows and enhance user engagement.",
+          "Chatbot: AI powered chatbot on Wonder website and email for customer support, automating customer service and client retention.",
           "Matiq: LLM Powered PhotoMath Replacemnt",
         ]
       },
