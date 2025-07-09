@@ -21,7 +21,7 @@ export const userInfo = {
         "degree": "Exchange Program",
         "major": "Computer Science and Business",
         "graduation_date": "Dec 2024",
-        "logo": "/src/assets/DTU_Logo.jpg"
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Danmarks_Tekniske_Universitet_%28logo%29.svg"
       }
     ],
     "work_experience": [
