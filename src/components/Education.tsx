@@ -4,16 +4,12 @@ import { userInfo } from "@/data/user-data";
 
 // Import local university logos
 import HKUSTLogo from "@/assets/HKUST.png";
-import UBCLogo from "@/assets/UBC.png";
 
 const Education = () => {
   const getLogoSrc = (logoPath: string, universityName: string) => {
     // Handle local asset paths based on university name
     if (universityName.includes('Hong Kong University of Science and Technology') || universityName.includes('HKUST')) {
       return HKUSTLogo;
-    }
-    if (universityName.includes('University of British Columbia') || universityName.includes('UBC')) {
-      return UBCLogo;
     }
     // Return external URLs as-is for fallback
     return logoPath;
@@ -31,7 +27,7 @@ const Education = () => {
               </h2>
             </div>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              My academic journey in Computer Science
+              My academic journey in Computer Engineering
             </p>
           </div>
 
