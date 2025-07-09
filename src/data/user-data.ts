@@ -46,11 +46,11 @@ export const userInfo = {
 
     "co_curricular_activities": [
       {
-        "title": "HKUST Robotics Team",
+        "title": "Head Engineering Student Ambassador",
         "role": "Senior Member",
         "period": "Sep 2022 – Dec 2023",
-        "description": "Participated in RoboGames in San Francisco, CA 2023 winning two gold medals and one silver medal.",
-        "link": "https://www.robotics.hkust.edu.hk/",
+        "description": "Served as chief student representative for School of Engineering, managing public relations and outreach initiatives for prospective students, parents, internal and external high profile figures.",
+        "link": "https://seng.hkust.edu.hk/about/student-ambassadors/8702",
         "image": "/src/assets/Robotics Team.png"
       },
       {
