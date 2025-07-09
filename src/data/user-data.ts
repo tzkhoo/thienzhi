@@ -59,7 +59,7 @@ export const userInfo = {
         "period": "Jan 2023 – Feb 2026",
         "description": "Building a community for engineering students and supporting them in navigating academics and social challenges in university life",
         "link": "https://seng.hkust.edu.hk/about/our-People/peer-mentors",
-        "image": "/src/assets/Affinity.png"
+        "image": "/src/assets/pmp.png"
       },
       {
         "title": "HKUST Spark Global",
@@ -67,7 +67,7 @@ export const userInfo = {
         "period": "Sep 2023 – Present",
         "description": "Active organizer of university events that promotes the culture, places and diversity of Hong Kong.",
         "link": "https://studyabroad.hkust.edu.hk/hkustsparkglobal",
-        "image": "/src/assets/Project Melo.jpg"
+        "image": "/src/assets/sg.png"
       }
     ],
     "certifications_achievements": [

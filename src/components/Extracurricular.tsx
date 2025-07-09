@@ -2,15 +2,15 @@ import { userInfo } from "@/data/user-data";
 
 // Import local images
 import SengImg from "@/assets/seng.jpeg";
-import AffinityImg from "@/assets/Affinity.png";
-import ProjectMeloImg from "@/assets/Project Melo.jpg";
+import PmpImg from "@/assets/pmp.png";
+import SgImg from "@/assets/sg.png";
 
 const Extracurricular = () => {
   const getImageSrc = (imagePath: string) => {
-    // Handle local asset paths
+    // Handle local asset pathsre
     if (imagePath.includes('seng.jpeg')) return SengImg;
-    if (imagePath.includes('Affinity.png')) return AffinityImg;
-    if (imagePath.includes('Project Melo.jpg')) return ProjectMeloImg;
+    if (imagePath.includes('pmp.png')) return PmpImg;
+    if (imagePath.includes('sg.png')) return SgImg;
     // Return external URLs as-is
     return imagePath;
   };
@@ -19,7 +19,7 @@ const Extracurricular = () => {
     <section id="extracurricular" className="py-20 relative">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl md:text-6xl font-bold text-white mb-12 text-center">
-          Extracurricular Activities
+          Community Engagement
         </h2>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
