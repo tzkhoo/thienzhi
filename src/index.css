@@ -35,9 +35,9 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
-    --gradient-yellow-dark: 53 60% 25%;
-    --gradient-yellow-mid: 53 80% 35%;
-    --gradient-yellow-accent: 53 100% 45%;
+    --gradient-yellow-dark: 45 20% 15%;
+    --gradient-yellow-mid: 40 35% 25%;
+    --gradient-yellow-accent: 50 45% 35%;
 
     --radius: 0.5rem;
 
@@ -87,9 +87,9 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
 
-    --gradient-yellow-dark: 53 70% 20%;
-    --gradient-yellow-mid: 53 90% 30%;
-    --gradient-yellow-accent: 53 100% 40%;
+    --gradient-yellow-dark: 40 25% 12%;
+    --gradient-yellow-mid: 45 40% 20%;
+    --gradient-yellow-accent: 50 50% 30%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
