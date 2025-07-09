@@ -1,5 +1,5 @@
 export const userInfo = {
-    "name": "Khoo Thien Zhi",
+    "name": "Thien Zhi KHOO",
     "contact": {
       "phone": "+852 44924712",
       "email": "tzkhoo@connect.ust.hk",
