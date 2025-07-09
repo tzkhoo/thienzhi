@@ -31,47 +31,19 @@ export const userInfo = {
         "period": "Jun 2025 – Present",
         "responsibilities": [
           "AI Agent: Developed a WhatsApp AI agent utilizing RAG to deliver accurate agentic workflows and enhance user engagement.",
-          "Chatbot: Created a chatbot for live website interactions and email inquiries, automating customer support and improving response times.",
-          "Business",
+          "Chatbot: Created a chatbot for website and email inquiries, automating customer support and improving response times.",
+          "Sales Leads: Generated business leads in multiple HK industries by leveraging Google Cloud APIs for automated data extraction and outreach ",
         ]
       },
       {
-        "company": "Neural Lab",
-        "role": "Data Engineer Intern",
+        "company": "Qualifly Education Limited",
+        "role": "Business Development Analyst",
         "period": "Jun 2024 – Aug 2024",
         "responsibilities": [
-          "Liaised with clients from Macau and Australia to define project scope, timeline, requirements, and deliverables.",
-          "Designed and developed an interface using CNNs for optimization of aviation-related processes, improving On-Time Performance by 20% (average case) with a deep-learning model achieving ~85% accuracy."
+          "Conduct market research and analysis for HK edtech industry, facilitated strategic proposals for market
+expansion into Asia, and generating business leads through B2B and B2C marketing",
         ]
       },
-      {
-        "company": "USThing Mobile Application",
-        "role": "President",
-        "period": "May 2023 – Present",
-        "responsibilities": [
-          "Leading a team of ~50 members to restructure HKUST's most-used mobile application, serving over 8,000+ users across Android, iOS, and PWA.",
-          "Oversaw migration from native platforms to React Native, built new features, and led business operations."
-        ]
-      },
-      {
-        "company": "Get Salvaged",
-        "role": "Software Development Intern",
-        "period": "Dec 2023 – Feb 2024",
-        "responsibilities": [
-          "Developed software using Lean development approach to automate Shopify product upload, automating >50% of inputs and reducing processing time by 80%, enabling batch uploads of thousands of products.",
-          "Designed front-end prototypes with Streamlit; used Git/GitHub for feature branching, code reviews, and pull requests."
-        ]
-      },
-      {
-        "company": "HKUST Division of Environment and Sustainability",
-        "role": "Research Assistant",
-        "period": "Jan 2023 – Sep 2023",
-        "responsibilities": [
-          "Developed solutions with Professor Sauerwein and Urban Spring to monitor water withdrawal behavior of university students.",
-          "Handled data compilation, manipulation, and analysis using Excel, Tableau, and R (time series analysis, pivot tables, statistical testing)."
-        ]
-      }
-    ],
     "co_curricular_activities": [
       {
         "title": "HKUST Robotics Team",
