@@ -4,7 +4,7 @@ export const userInfo = {
       "phone": "+852 44924712",
       "email": "tzkhoo@connect.ust.hk",
       "linkedin": "https://www.linkedin.com/in/thienzhi/",
-      "CV": "/src/assets/Shahman_CV.pdf"
+      "CV": "/src/assets/Thien_Zhi CV.pdf"
     },
     "summary_1": "Coding the future. Bridging Consulting and AI for impact.",
     "summary_2": "Only the ones crazy enough to think they can change the world are the ones who do",
