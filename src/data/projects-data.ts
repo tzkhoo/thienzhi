@@ -28,7 +28,7 @@ export const projectsData = [
         description: "To be written..",
         longDescription: "To be written.",
         role: "1st Runner Up",
-        technologies: ["OpenCV", "TensorFlow", "AWS", "MongoDB"],
+        technologies: ["OpenCV", "TensorFlow", "AWS"],
         period: "Jan 2025 – Present",
         link: "https://karkaram-frontend.vercel.app/",
         image: "/src/assets/Karkaram.jpg",
