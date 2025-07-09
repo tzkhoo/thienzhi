@@ -3,8 +3,8 @@ export const userInfo = {
     "contact": {
       "phone": "+852 44924712",
       "email": "tzkhoo@connect.ust.hk",
-      "linkedin": "https://www.linkedin.com/in/thienzhi/",
-      "CV": "/src/assets/ThienZhi_CV.pdf"
+      "linkedin": "https://www.linkedin.com/in/shahman-ali/",
+      "CV": "/src/assets/Shahman_CV.pdf"
     },
     "summary_1": "Coding the future. Bridging Consulting and AI for impact.",
     "summary_2": "Only the ones crazy enough to think they can change the world are the ones who do",
@@ -19,42 +19,70 @@ export const userInfo = {
       {
         "university": "Technical University of Denmark",
         "degree": "Exchange Program",
-        "major": "Computer Science",
+        "major": "Computer Science and Business",
         "graduation_date": "Dec 2024",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Danmarks_Tekniske_Universitet_%28logo%29.svg"
       }
     ],
     "work_experience": [
       {
-        "company": "Bindo Labs - Wonder",
-        "role": "Data Engineering Analyst",
+        "company": "Cracked Engineers- Startup Sprint",
+        "role": "Founder and Developer",
         "period": "Jun 2025 – Present",
         "responsibilities": [
-          "AI Agent: Developed WhatsApp AI agent utilizing RAG for acccurate agentic workflows and enhance user engagement.",
-          "Chatbot: Designed AI-powered chatbots for email and live website enquiries, automating customer service and response efficiency.",
-          "Business Leads: Automated end-to-end business lead across multiple industries in HK leveraging Google Cloud APIs for data extraction and outreach.",
+          "Behave Yourself: AAI-powered behavioural interviewer for startups to help them find the right candidates for their startups.",
+          "Amploy: Automated Employ- Job Application Automation Extension",
+          "Matiq: LLM Powered PhotoMath Replacemnt",
         ]
       },
       {
-        "company": "Qualifly Education Limited",
-        "role": "Business Development Analyst",
+        "company": "Neural Lab",
+        "role": "Data Engineer Intern",
         "period": "Jun 2024 – Aug 2024",
         "responsibilities": [
-          "Conduct market research and analysis for HK edtech industry, facilitated strategic proposals for market expansion into Asia, and generating business leads through B2B and B2C marketing"
+          "Liaised with clients from Macau and Australia to define project scope, timeline, requirements, and deliverables.",
+          "Designed and developed an interface using CNNs for optimization of aviation-related processes, improving On-Time Performance by 20% (average case) with a deep-learning model achieving ~85% accuracy."
         ]
       },
+      {
+        "company": "USThing Mobile Application",
+        "role": "President",
+        "period": "May 2023 – Present",
+        "responsibilities": [
+          "Leading a team of ~50 members to restructure HKUST's most-used mobile application, serving over 8,000+ users across Android, iOS, and PWA.",
+          "Oversaw migration from native platforms to React Native, built new features, and led business operations."
+        ]
+      },
+      {
+        "company": "Get Salvaged",
+        "role": "Software Development Intern",
+        "period": "Dec 2023 – Feb 2024",
+        "responsibilities": [
+          "Developed software using Lean development approach to automate Shopify product upload, automating >50% of inputs and reducing processing time by 80%, enabling batch uploads of thousands of products.",
+          "Designed front-end prototypes with Streamlit; used Git/GitHub for feature branching, code reviews, and pull requests."
+        ]
+      },
+      {
+        "company": "HKUST Division of Environment and Sustainability",
+        "role": "Research Assistant",
+        "period": "Jan 2023 – Sep 2023",
+        "responsibilities": [
+          "Developed solutions with Professor Sauerwein and Urban Spring to monitor water withdrawal behavior of university students.",
+          "Handled data compilation, manipulation, and analysis using Excel, Tableau, and R (time series analysis, pivot tables, statistical testing)."
+        ]
+      }
     ],
     "co_curricular_activities": [
       {
-        "title": "Head Student Ambassador",
-        "role": "School of Engineering",
-        "period": "Sep 2022 – Dec 2026",
-        "description": "Served as chief student representative for School of Engineering, managing public relations and outreach initiatives for prospective students, parents, internal and external high profile figures",
-        "link": "https://seng.hkust.edu.hk/about/student-ambassadors/8702",
-        "image": "/src/assets/SENG.png"
+        "title": "HKUST Robotics Team",
+        "role": "Senior Member",
+        "period": "Sep 2022 – Dec 2023",
+        "description": "Participated in RoboGames in San Francisco, CA 2023 winning two gold medals and one silver medal.",
+        "link": "https://www.robotics.hkust.edu.hk/",
+        "image": "/src/assets/Robotics Team.png"
       },
       {
-        "title": "Engineering Peer Mentor",
+        "title": "HKUST Affinity",
         "role": "Founder and President",
         "period": "Sep 2024 – Present",
         "description": "Building a community of students who are passionate about technology and entrepreneurship.",
@@ -62,7 +90,7 @@ export const userInfo = {
         "image": "/src/assets/Affinity.png"
       },
       {
-        "title": "HKUST Spark Global",
+        "title": "Project Melo",
         "role": "Social Member",
         "period": "Sep 2023 – Present",
         "description": "Contributed to youth empowerment and societal impact initiatives, fostering collaboration among leaders and innovators.",
