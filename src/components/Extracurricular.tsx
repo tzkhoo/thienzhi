@@ -1,14 +1,14 @@
 import { userInfo } from "@/data/user-data";
 
 // Import local images
-import RoboticsImg from "@/assets/Robotics Team.png";
+import SengImg from "@/assets/seng.jpeg";
 import AffinityImg from "@/assets/Affinity.png";
 import ProjectMeloImg from "@/assets/Project Melo.jpg";
 
 const Extracurricular = () => {
   const getImageSrc = (imagePath: string) => {
     // Handle local asset paths
-    if (imagePath.includes('Robotics Team.png')) return RoboticsImg;
+    if (imagePath.includes('seng.jpeg')) return SengImg;
     if (imagePath.includes('Affinity.png')) return AffinityImg;
     if (imagePath.includes('Project Melo.jpg')) return ProjectMeloImg;
     // Return external URLs as-is
