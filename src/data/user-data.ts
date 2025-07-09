@@ -19,7 +19,7 @@ export const userInfo = {
       {
         "university": "Technical University of Denmark",
         "degree": "Exchange Program",
-        "major": "Computer Science and Business",
+        "major": "Computer Science",
         "graduation_date": "Dec 2024",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Danmarks_Tekniske_Universitet_%28logo%29.svg"
       }
@@ -107,7 +107,7 @@ export const userInfo = {
       "tools_services": ["MongoDB", "AWS", "Vercel", "Google Cloud"],
       "general": ["Microsoft Office", "Canva"]
     },
-    "languages": ["English (Native))", "Mandarin (Native)", "Hindi (Fluent)"],
+    "languages": ["English (Native)", "Mandarin (Fluent)", "Cantonese (Conversational)", "Malay (Conversational)"],
     "resume_path": "CV_Attachments/Shahman Ali CV.pdf",
     "email_template": {
         "subject_template": "Application for {job_title} position at {company}",
