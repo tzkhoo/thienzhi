@@ -51,7 +51,7 @@ export const userInfo = {
         "period": "June 2023 – June 2026",
         "description": "Chief student representative managing public relations and outreach initiatives for prospective students, parents, internal and external high profile figures.",
         "link": "https://seng.hkust.edu.hk/about/student-ambassadors/8702",
-        "image": "/src/assets/seng.jpeg"
+        "image": "/src/assets/seng.png"
       },
       {
         "title": "Engineering Peer Mentor",
