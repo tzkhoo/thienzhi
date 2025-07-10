@@ -8,8 +8,8 @@ export const projectsData = [
         period: "Aug 2024",
         link: "https://www.bnpparibas.com.hk/en/about-us/sustainable-finance/university-challenge/",
         image: "/src/assets/Kiran.png",
-        category: "Sustainable Finance",
-        status: "Active"
+        category: "Finance",
+        status: "Case Competition"
     },
     {
         title: "Oliver Wyman Case Competition 2025",
@@ -18,8 +18,8 @@ export const projectsData = [
         role: "1st Runner Up",
         technologies: ["Blender", "Three.js", "Express", "MongoDB"],
         period: "May 2023 – Present",
-        link: "https://www.usthing.xyz/",
-        image: "/src/assets/USThing.png",
+        link: "https://www.linkedin.com/posts/hang-wang402_oliverwymancareer-activity-7335578568984276993-UxD7?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAdZb0BfhLrWZOsJR7ItPSutuSsxgzuPyA",
+        image: "/src/assets/bnp.jpeg",
         category: "Consulting",
         status: "Active"
     },
