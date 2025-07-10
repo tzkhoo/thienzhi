@@ -42,7 +42,7 @@ const Skills = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Skills & Technologies
+            Skills
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             A comprehensive overview of my technical expertise and tools I work with
