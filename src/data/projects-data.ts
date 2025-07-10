@@ -5,8 +5,8 @@ export const projectsData = [
         longDescription: "To be written.",
         role: "Champion",
         technologies: ["RAG", "LLM", "AWS", "Google Cloud"],
-        period: "Aug 2024 – Present",
-        link: "https://kiran.ngo/",
+        period: "Aug 2024",
+        link: "https://www.bnpparibas.com.hk/en/about-us/sustainable-finance/university-challenge/",
         image: "/src/assets/Kiran.png",
         category: "Sustainable Finance",
         status: "Active"

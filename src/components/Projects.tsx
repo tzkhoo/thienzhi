@@ -19,6 +19,11 @@ const Projects = () => {
     return imagePath;
   };
 
+  const getRoleStyle = (role: string) => {
+    // Apply enhanced styling to all roles
+    return "text-cyan-300 font-bold text-base";
+  };
+
   const handleShowAllProjects = () => {
     navigate('/projects');
     // Scroll to top after navigation
@@ -81,9 +86,9 @@ const Projects = () => {
                   )}
                 </div>
                 
-                <div className="flex items-center justify-between text-sm text-gray-400">
-                  <span>{project.role}</span>
-                  <span>{project.period}</span>
+                <div className="flex items-center justify-between text-sm">
+                  <span className={getRoleStyle(project.role)}>{project.role}</span>
+                  <span className="text-gray-400">{project.period}</span>
                 </div>
                 
                 <div className="flex gap-4 pt-4">
