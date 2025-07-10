@@ -7,7 +7,7 @@ export const userInfo = {
       "CV": "/src/assets/ThienZhi_CV.pdf"
     },
     "summary_1": "Coding the future. Consulting and tech.",
-    "summary_2": "The rearview mirrow is for glancing, not for staring.",
+    "summary_2": "'The rearview mirrow is for glancing, not for staring.'",
     "education": [
       {
         "university": "The Hong Kong University of Science and Technology",
@@ -65,7 +65,7 @@ export const userInfo = {
         "title": "HKUST Spark Global",
         "role": "Senior Leader",
         "period": "Sep 2023 – Present",
-        "description": "Active organizer of university events that promotes the culture, places and diversity of Hong Kong.",
+        "description": "Active organizer of university events hosting over 1000 students that promotes the culture, places and diversity of Hong Kong.",
         "link": "https://studyabroad.hkust.edu.hk/hkustsparkglobal",
         "image": "/src/assets/sg.png"
       }
