@@ -2,8 +2,8 @@ import { projectsData } from "@/data/projects-data";
 import { useNavigate } from "react-router-dom";
 
 // Import local images
-import KarkaramImg from "@/assets/Karkaram.jpg";
-import BnpImg from "@/assets/bnp.jpeg";
+import BochkImg from "@/assets/bochk.jpg";
+import BnpImg from "@/assets/bnp.jpg";
 import OwImg from "@/assets/ow.jpg"; 
 
 const Projects = () => {
@@ -14,8 +14,8 @@ const Projects = () => {
 
   const getImageSrc = (imagePath: string) => {
     // Handle local asset paths
-    if (imagePath.includes('Karkaram.jpg')) return KarkaramImg;
-    if (imagePath.includes('bnp.jpeg')) return BnpImg;
+    if (imagePath.includes('bochk.jpg')) return BochkImg;
+    if (imagePath.includes('bnp.jpg')) return BnpImg;
     if (imagePath.includes('ow.jpg')) return OwImg;
     // Return external URLs as-is
     return imagePath;
