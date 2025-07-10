@@ -7,9 +7,9 @@ export const projectsData = [
         technologies: ["RAG", "LLM", "AWS", "Google Cloud"],
         period: "Aug 2024",
         link: "https://www.bnpparibas.com.hk/en/about-us/sustainable-finance/university-challenge/",
-        image: "/src/assets/Kiran.png",
+        image: "/src/assets/bnp.jpeg",
         category: "Finance",
-        status: "Case Competition"
+        status: "Consulting Case Comp"
     },
     {
         title: "Oliver Wyman Case Competition 2025",
@@ -19,9 +19,9 @@ export const projectsData = [
         technologies: ["Blender", "Three.js", "Express", "MongoDB"],
         period: "May 2023 – Present",
         link: "https://www.linkedin.com/posts/hang-wang402_oliverwymancareer-activity-7335578568984276993-UxD7?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAdZb0BfhLrWZOsJR7ItPSutuSsxgzuPyA",
-        image: "/src/assets/bnp.jpeg",
-        category: "Consulting",
-        status: "Active"
+        image: "/src/assets/ow.jpg",
+        category: "E-Commerce",
+        status: "Consulting Case Comp"
     },
     {
         title: "BOCHK Case Competition 2024",
@@ -32,8 +32,8 @@ export const projectsData = [
         period: "Jan 2025 – Present",
         link: "https://karkaram-frontend.vercel.app/",
         image: "/src/assets/Karkaram.jpg",
-        category: "Fintech + AI",
-        status: "Active"
+        category: "AI Fintech",
+        status: "Consulting Case Comp"
     },
     {
         title: "Amploy",

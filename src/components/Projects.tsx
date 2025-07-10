@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 // Import local images
 import KarkaramImg from "@/assets/Karkaram.jpg";
 import BnpImg from "@/assets/bnp.jpeg";
+import OwImg from "@/assets/ow.jpg"; 
 
 const Projects = () => {
   const navigate = useNavigate();
@@ -15,13 +16,14 @@ const Projects = () => {
     // Handle local asset paths
     if (imagePath.includes('Karkaram.jpg')) return KarkaramImg;
     if (imagePath.includes('bnp.jpeg')) return BnpImg;
+    if (imagePath.includes('ow.jpg')) return OwImg;
     // Return external URLs as-is
     return imagePath;
   };
 
   const getRoleStyle = (role: string) => {
     // Apply enhanced styling to all roles
-    return "font-bold text-base" + " text-[#FFDE21]";
+    return "font-bold text-xl" + " text-[#FFDE21]";
   };
 
   const handleShowAllProjects = () => {
