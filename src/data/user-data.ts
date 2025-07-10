@@ -7,20 +7,20 @@ export const userInfo = {
       "CV": "/src/assets/ThienZhi_CV.pdf"
     },
     "summary_1": "Coding the future. Consulting and tech.",
-    "summary_2": "\" The rearview mirrow is for glancing, not for staring. \"",
+    "summary_2": "'The rearview mirrow is for glancing, not for staring.'",
     "education": [
       {
         "university": "The Hong Kong University of Science and Technology",
         "degree": "Bachelors of Engineering",
         "major": "Computer Engineering",
-        "graduation_date": "Sep 2022 - June 2026",
+        "graduation_date": "May 2026",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/3/3a/Hong_Kong_University_of_Science_and_Technology_Logo.svg/1200px-Hong_Kong_University_of_Science_and_Technology_Logo.svg.png"
       },
       {
         "university": "Technical University of Denmark",
         "degree": "Exchange Program",
         "major": "Computer Science",
-        "graduation_date": "Aug 2024 - Dec 2024",
+        "graduation_date": "Dec 2024",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Danmarks_Tekniske_Universitet_%28logo%29.svg"
       }
     ],

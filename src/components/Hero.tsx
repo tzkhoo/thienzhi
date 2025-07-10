@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { userInfo } from "@/data/user-data";
-import CVFile from "@/assets/ThienZhi_CV.pdf";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -33,7 +32,7 @@ const Hero = () => {
             </button>
             <button 
               className="px-8 py-4 border-2 border-cyan-500 text-cyan-400 rounded-full font-semibold hover:bg-cyan-500 hover:text-white transition-all duration-300"
-              onClick={() => window.open(CVFile, '_blank')}
+              onClick={() => window.open(userInfo.contact.CV, '_blank')}
             >
               Thien Zhi's CV
             </button>
