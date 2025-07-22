@@ -26,7 +26,7 @@ const Extracurricular = () => {
           {userInfo.co_curricular_activities.map((activity) => (
             <div 
               key={activity.title}
-              className="group bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl overflow-hidden hover:border-cyan-500 transition-all duration-300 hover:scale-105"
+              className="group bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl overflow-hidden hover:border-primary transition-all duration-300 hover:scale-105"
             >
               <div className="relative overflow-hidden h-48 bg-slate-700/30">
                 <img 
@@ -38,7 +38,7 @@ const Extracurricular = () => {
               </div>
               
               <div className="p-6 space-y-4">
-                <h3 className="text-xl font-semibold text-white group-hover:text-cyan-300 transition-colors">
+                <h3 className="text-xl font-semibold text-white group-hover:text-primary transition-colors">
                   {activity.title}
                 </h3>
                 
@@ -56,7 +56,7 @@ const Extracurricular = () => {
                     href={activity.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 text-center py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg hover:scale-105 transition-transform duration-300"
+                    className="flex-1 text-center py-2 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-lg hover:scale-105 transition-transform duration-300"
                   >
                     Learn More
                   </a>

@@ -58,13 +58,13 @@ const Navigation = () => {
     <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300">
       <div className={`px-6 py-3 rounded-full backdrop-blur-md border transition-all duration-300 ${
         isScrolled 
-          ? 'bg-slate-900/90 border-slate-700/50 shadow-2xl shadow-cyan-500/10' 
+          ? 'bg-slate-900/90 border-slate-700/50 shadow-2xl shadow-primary/10' 
           : 'bg-slate-800/60 border-slate-600/30 shadow-lg'
       }`}>
         <div className="flex items-center space-x-6">
           <button
             onClick={handleHomeClick}
-            className="text-lg font-bold text-white hover:text-cyan-300 transition-colors duration-300"
+            className="text-lg font-bold text-white hover:text-primary transition-colors duration-300"
           >
             Me
           </button>
@@ -81,7 +81,7 @@ const Navigation = () => {
               <button
                 key={item.name}
                 onClick={item.action}
-                className="text-gray-300 hover:text-white transition-all duration-300 hover:scale-105 transform px-3 py-1.5 rounded-full hover:bg-cyan-500/20 text-sm font-medium"
+                className="text-gray-300 hover:text-white transition-all duration-300 hover:scale-105 transform px-3 py-1.5 rounded-full hover:bg-primary/20 text-sm font-medium"
               >
                 {item.name}
               </button>

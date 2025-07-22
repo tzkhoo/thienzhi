@@ -9,7 +9,7 @@ const Experience = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center mb-4">
-              <Briefcase className="w-8 h-8 text-cyan-400 mr-3" />
+              <Briefcase className="w-8 h-8 text-primary mr-3" />
               <h2 className="text-4xl md:text-6xl font-bold text-white">
                 Experience
               </h2>
@@ -26,7 +26,7 @@ const Experience = () => {
                   <div className="flex justify-between items-start mb-2">
                     <div>
                       <CardTitle className="text-white text-xl mb-1">{exp.role}</CardTitle>
-                      <CardDescription className="text-cyan-300 text-lg">
+                      <CardDescription className="text-primary text-lg">
                         {exp.company}
                       </CardDescription>
                     </div>
@@ -40,7 +40,7 @@ const Experience = () => {
                     <ul className="space-y-2">
                       {exp.responsibilities.map((item, itemIndex) => (
                         <li key={itemIndex} className="text-gray-300 flex items-start">
-                          <span className="text-cyan-400 mr-2">•</span>
+                          <span className="text-primary mr-2">•</span>
                           {item}
                         </li>
                       ))}

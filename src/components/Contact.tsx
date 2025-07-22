@@ -21,19 +21,19 @@ const Contact = () => {
             
             <div className="flex justify-center space-x-8">
               <a href={`mailto:${userInfo.contact.email}`} className="flex items-center space-x-4 text-gray-300 hover:text-white transition-colors">
-                <div className="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center text-2xl">
+                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-2xl text-primary-foreground">
                   📧
                 </div>
                 <span>{userInfo.contact.email}</span>
               </a>
               <a href={userInfo.contact.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 text-gray-300 hover:text-white transition-colors">
-                <div className="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center text-2xl">
+                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-2xl text-primary-foreground">
                   💼
                 </div>
                 <span>LinkedIn</span>
               </a>
               <a href={`tel:${userInfo.contact.phone}`} className="flex items-center space-x-4 text-gray-300 hover:text-white transition-colors">
-                <div className="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center text-2xl">
+                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-2xl text-primary-foreground">
                   <PhoneIcon className="w-6 h-6" />
                 </div>
                 <span>Call</span>

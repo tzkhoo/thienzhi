@@ -10,23 +10,23 @@ const Skills = () => {
     programming: {
       icon: Code,
       title: "Programming Languages",
-      color: "from-cyan-500 to-blue-500",
-      bgColor: "bg-cyan-500/10",
-      borderColor: "border-cyan-500/30"
+      color: "from-primary to-accent",
+      bgColor: "bg-primary/10",
+      borderColor: "border-primary/30"
     },
     data_analysis_visualization: {
       icon: Database,
       title: "Data Analysis & Visualization",
-      color: "from-blue-500 to-teal-500",
-      bgColor: "bg-blue-500/10",
-      borderColor: "border-blue-500/30"
+      color: "from-accent to-primary",
+      bgColor: "bg-accent/10",
+      borderColor: "border-accent/30"
     },
     tools_services: {
       icon: Cloud,
       title: "Tools & Cloud Services",
-      color: "from-teal-500 to-cyan-500",
-      bgColor: "bg-teal-500/10",
-      borderColor: "border-teal-500/30"
+      color: "from-primary to-accent",
+      bgColor: "bg-primary/10",
+      borderColor: "border-primary/30"
     },
     general: {
       icon: Briefcase,
@@ -76,7 +76,7 @@ const Skills = () => {
                     {skillList.map((skill, index) => (
                       <div 
                         key={skill}
-                        className="group relative bg-slate-700/30 backdrop-blur-sm border border-slate-600/50 rounded-lg px-4 py-3 text-gray-300 hover:border-cyan-500/50 hover:text-white transition-all duration-300 hover:scale-105 hover:bg-slate-700/50"
+                        className="group relative bg-slate-700/30 backdrop-blur-sm border border-slate-600/50 rounded-lg px-4 py-3 text-gray-300 hover:border-primary/50 hover:text-white transition-all duration-300 hover:scale-105 hover:bg-slate-700/50"
                         style={{ animationDelay: `${index * 50}ms` }}
                       >
                         <div className="flex items-center justify-between">
@@ -86,7 +86,7 @@ const Skills = () => {
                               <div 
                                 key={i}
                                 className={`w-1.5 h-1.5 rounded-full transition-colors duration-300 ${
-                                  i < 2 ? 'bg-cyan-400' : 'bg-slate-600 group-hover:bg-cyan-400'
+                                  i < 2 ? 'bg-primary' : 'bg-slate-600 group-hover:bg-primary'
                                 }`}
                               />
                             ))}
@@ -94,7 +94,7 @@ const Skills = () => {
                         </div>
                         
                         {/* Hover effect gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/5 to-cyan-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
                       </div>
                     ))}
                   </div>

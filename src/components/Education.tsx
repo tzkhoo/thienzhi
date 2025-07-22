@@ -21,7 +21,7 @@ const Education = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center mb-4">
-              <GraduationCap className="w-8 h-8 text-cyan-400 mr-3" />
+              <GraduationCap className="w-8 h-8 text-primary mr-3" />
               <h2 className="text-4xl md:text-6xl font-bold text-white">
                 Education
               </h2>
@@ -48,7 +48,7 @@ const Education = () => {
                         <CardTitle className="text-white text-xl mb-2">
                           {edu.degree} {edu.major && `in ${edu.major}`}
                         </CardTitle>
-                        <CardDescription className="text-cyan-300 text-lg">
+                        <CardDescription className="text-primary text-lg">
                           {edu.university}
                         </CardDescription>
                       </div>
