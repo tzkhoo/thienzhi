@@ -5,7 +5,7 @@ import SengImg from "@/assets/seng.png";
 import PmpImg from "@/assets/pmp.png";
 import SgImg from "@/assets/sg.png";
 
-const Extracurricular = () => {
+const Community = () => {
   const getImageSrc = (imagePath: string) => {
     // Handle local asset pathsre
     if (imagePath.includes('seng.png')) return SengImg;
@@ -16,7 +16,7 @@ const Extracurricular = () => {
   };
 
   return (
-    <section id="extracurricular" className="py-20 relative">
+    <section id="community" className="py-20 relative">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl md:text-6xl font-bold text-white mb-12 text-center">
           Community Engagement
@@ -70,4 +70,4 @@ const Extracurricular = () => {
   );
 };
 
-export default Extracurricular; 
+export default Community;

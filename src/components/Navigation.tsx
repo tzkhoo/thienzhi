@@ -31,13 +31,6 @@ const Navigation = () => {
   };
 
 
-  const handleProjectsClick = () => {
-    navigate('/projects');
-    // Scroll to top after navigation
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 100);
-  };
 
   const handleHomeClick = () => {
     navigate('/');
@@ -65,10 +58,12 @@ const Navigation = () => {
             {[
               { name: 'Education', action: () => scrollToSection('education') },
               { name: 'Experience', action: () => scrollToSection('experience') },
+              { name: 'Case Comp', action: () => scrollToSection('case-comp') },
+              { name: 'Community', action: () => scrollToSection('community') },
               { name: 'Skills', action: () => scrollToSection('skills') },
-              { name: 'Extracurricular', action: () => scrollToSection('extracurricular') },
-              { name: 'Projects', action: handleProjectsClick },
-              { name: 'Contact', action: () => scrollToSection('contact') }
+              { name: 'Contact', action: () => scrollToSection('contact') },
+              { name: 'Projects', action: () => navigate('/projects') },
+              { name: 'Awards', action: () => navigate('/awards') }
             ].map((item) => (
               <button
                 key={item.name}

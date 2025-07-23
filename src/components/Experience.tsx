@@ -48,14 +48,16 @@ const Experience = () => {
                         </li>
                       ))}
                     </ul>
-                    <Button 
-                      onClick={() => navigate(`/experience-projects/${index}`)}
-                      variant="outline"
-                      className="w-full bg-primary/10 border-primary/30 text-primary hover:bg-primary/20 hover:text-primary-foreground"
-                    >
-                      View My Projects
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
+                    {exp.role === "Data Engineering Analyst" && (
+                      <Button 
+                        onClick={() => navigate(`/experience-projects/${index}`)}
+                        variant="outline"
+                        className="w-full bg-primary/10 border-primary/30 text-primary hover:bg-primary/20 hover:text-primary-foreground"
+                      >
+                        View My Projects
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Button>
+                    )}
                   </div>
                 </CardContent>
               </Card>

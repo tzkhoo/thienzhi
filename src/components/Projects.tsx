@@ -27,7 +27,7 @@ const Projects = () => {
   };
 
   const handleShowAllProjects = () => {
-    navigate('/projects');
+    navigate('/awards');
     // Scroll to top after navigation
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -35,10 +35,10 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 relative">
+    <section id="case-comp" className="py-20 relative">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl md:text-6xl font-bold text-white mb-12 text-center">
-          Professional Awards
+            Professional Awards
         </h2>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
@@ -100,7 +100,7 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     className="flex-1 text-center py-2 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-lg hover:scale-105 transition-transform duration-300"
                   >
-                    View Project
+                    View Awards
                   </a>
                 </div>
               </div>
@@ -114,7 +114,7 @@ const Projects = () => {
             onClick={handleShowAllProjects}
             className="px-8 py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-lg hover:scale-105 transition-all duration-300 font-semibold shadow-lg hover:shadow-primary/25"
           >
-            Show All Projects
+                Show All Awards
           </button>
         </div>
       </div>
