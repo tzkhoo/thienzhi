@@ -30,13 +30,6 @@ const Navigation = () => {
     }
   };
 
-  const handleBooksClick = () => {
-    navigate('/books');
-    // Scroll to top after navigation
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 100);
-  };
 
   const handleProjectsClick = () => {
     navigate('/projects');
@@ -75,7 +68,6 @@ const Navigation = () => {
               { name: 'Skills', action: () => scrollToSection('skills') },
               { name: 'Extracurricular', action: () => scrollToSection('extracurricular') },
               { name: 'Projects', action: handleProjectsClick },
-              { name: 'Books', action: handleBooksClick },
               { name: 'Contact', action: () => scrollToSection('contact') }
             ].map((item) => (
               <button

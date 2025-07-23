@@ -1,8 +1,11 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Briefcase } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Briefcase, ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { userInfo } from "@/data/user-data";
 
 const Experience = () => {
+  const navigate = useNavigate();
   return (
     <section id="experience" className="py-20 relative">
       <div className="container mx-auto px-6">
@@ -21,7 +24,7 @@ const Experience = () => {
 
           <div className="space-y-8">
             {userInfo.work_experience.map((exp, index) => (
-              <Card key={index} className="bg-slate-800/50 border-slate-700 hover:bg-slate-800/70 transition-all duration-300">
+              <Card key={index} className="bg-slate-800/50 border-slate-700 hover:bg-slate-800/70 hover:scale-105 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300">
                 <CardHeader>
                   <div className="flex justify-between items-start mb-2">
                     <div>
@@ -37,7 +40,7 @@ const Experience = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
-                    <ul className="space-y-2">
+                    <ul className="space-y-2 mb-6">
                       {exp.responsibilities.map((item, itemIndex) => (
                         <li key={itemIndex} className="text-gray-300 flex items-start">
                           <span className="text-primary mr-2">•</span>
@@ -45,6 +48,14 @@ const Experience = () => {
                         </li>
                       ))}
                     </ul>
+                    <Button 
+                      onClick={() => navigate(`/experience-projects/${index}`)}
+                      variant="outline"
+                      className="w-full bg-primary/10 border-primary/30 text-primary hover:bg-primary/20 hover:text-primary-foreground"
+                    >
+                      View My Projects
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
                   </div>
                 </CardContent>
               </Card>

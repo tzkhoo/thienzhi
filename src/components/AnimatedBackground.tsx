@@ -20,6 +20,34 @@ const AnimatedBackground = () => {
       <div className="absolute top-1/3 right-1/3 w-16 h-16 bg-gradient-to-r from-primary/20 to-accent/20 rotate-45 animate-spin-slow blur-sm"></div>
       <div className="absolute bottom-1/4 left-1/3 w-12 h-12 bg-gradient-to-r from-accent/20 to-primary/20 rotate-12 animate-spin-slow blur-sm animation-delay-3000"></div>
       
+      {/* Animated Stars */}
+      <div className="absolute inset-0">
+        {Array.from({ length: 50 }, (_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-primary rounded-full animate-twinkle"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 3}s`,
+              animationDuration: `${2 + Math.random() * 2}s`
+            }}
+          />
+        ))}
+        {Array.from({ length: 30 }, (_, i) => (
+          <div
+            key={`moving-${i}`}
+            className="absolute w-0.5 h-0.5 bg-accent rounded-full animate-drift-star"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${8 + Math.random() * 4}s`
+            }}
+          />
+        ))}
+      </div>
+      
       {/* Grid pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="grid grid-cols-12 gap-4 h-full">
