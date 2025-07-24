@@ -39,7 +39,7 @@ const AwardsPage = () => {
             {projectsData.map((project) => (
               <div 
                 key={project.title}
-                className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl overflow-hidden hover:border-primary transition-all duration-300 hover:scale-105 flex flex-col"
+                className="bg-slate-800/85 backdrop-blur-sm border border-slate-700 rounded-xl overflow-hidden hover:border-primary hover:bg-slate-800/95 transition-all duration-300 hover:scale-105 flex flex-col"
               >
                 <div className="relative overflow-hidden h-56 bg-slate-700/30 flex items-center justify-center">
                   <img 
@@ -64,7 +64,13 @@ const AwardsPage = () => {
                     <h3 className="text-2xl font-bold text-white mb-2">
                       {project.title}
                     </h3>
-                    <p className="text-primary font-semibold">
+                    <p className={`font-semibold ${
+                      project.role === 'Champion' 
+                        ? 'text-yellow-400' 
+                        : project.role === '1st Runner Up' 
+                        ? 'text-orange-400' 
+                        : 'text-primary'
+                    }`}>
                       {project.role} • {project.period}
                     </p>
                   </div>

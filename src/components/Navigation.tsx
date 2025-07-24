@@ -85,14 +85,14 @@ const Navigation = () => {
 
   const getActiveIndicatorStyle = () => {
     const navItems = [
-      { id: 'home', name: 'Me' },
-      { id: 'education', name: 'Education' },
-      { id: 'experience', name: 'Experience' },
-      { id: 'case-comp', name: 'Case Comp' },
-      { id: 'community', name: 'Community' },
-      { id: 'skills', name: 'Skills' },
-      { id: 'projects', name: 'Projects' },
-      { id: 'awards', name: 'Awards' }
+      { id: 'home', name: 'Me', width: 40 },
+      { id: 'education', name: 'Education', width: 85 },
+      { id: 'experience', name: 'Experience', width: 90 },
+      { id: 'case-comp', name: 'Case Comp', width: 90 },
+      { id: 'community', name: 'Community', width: 95 },
+      { id: 'skills', name: 'Skills', width: 60 },
+      { id: 'projects', name: 'Projects', width: 75 },
+      { id: 'awards', name: 'Awards', width: 70 }
     ];
     
     const currentActive = location.pathname === '/projects' ? 'projects' : 
@@ -100,21 +100,18 @@ const Navigation = () => {
     
     const activeIndex = navItems.findIndex(item => item.id === currentActive);
     
-    if (activeIndex === -1) return { left: '0px', width: '0px' };
+    if (activeIndex === -1) return { left: '0px', width: '0px', opacity: 0 };
     
-    // Calculate position based on index and estimated widths
-    const baseWidth = activeIndex === 0 ? 40 : 80; // 'Me' is shorter
-    const leftOffset = activeIndex === 0 ? 12 : 
-                      activeIndex === 1 ? 64 : 
-                      activeIndex === 2 ? 156 : 
-                      activeIndex === 3 ? 268 : 
-                      activeIndex === 4 ? 364 : 
-                      activeIndex === 5 ? 472 : 
-                      activeIndex === 6 ? 548 : 640;
+    // Calculate cumulative position
+    let leftOffset = 24; // Base padding
+    for (let i = 0; i < activeIndex; i++) {
+      leftOffset += navItems[i].width + 16; // width + gap
+    }
     
     return {
       left: `${leftOffset}px`,
-      width: `${baseWidth}px`
+      width: `${navItems[activeIndex].width}px`,
+      opacity: 1
     };
   };
 
@@ -141,19 +138,23 @@ const Navigation = () => {
             ? 'bg-slate-900/90 border-slate-700/50 shadow-2xl shadow-primary/10' 
             : 'bg-slate-800/60 border-slate-600/30 shadow-lg'
         }`}>
-          <div className="flex items-center space-x-6 relative">
-            {/* Sliding indicator */}
+          <div className="flex items-center space-x-4 relative">
+            {/* Sliding rounded highlight */}
             <div 
-              className="absolute bottom-0 h-0.5 bg-primary rounded-full transition-all duration-500 ease-out"
-              style={getActiveIndicatorStyle()}
+              className="absolute bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full transition-all duration-500 ease-out shadow-lg shadow-primary/25"
+              style={{
+                ...getActiveIndicatorStyle(),
+                height: '36px',
+                top: '2px'
+              }}
             />
             
             <button
               onClick={handleHomeClick}
-              className={`text-lg font-bold transition-all duration-500 px-3 py-1.5 rounded-full relative z-10 ${
+              className={`text-lg transition-all duration-500 px-3 py-1.5 rounded-full relative z-10 ${
                 activeSection === 'home' 
-                  ? 'text-primary' 
-                  : 'text-white hover:text-primary'
+                  ? 'text-primary font-bold' 
+                  : 'text-white hover:text-primary font-normal'
               }`}
             >
               Me
@@ -167,15 +168,25 @@ const Navigation = () => {
                 { name: 'Skills', action: () => scrollToSection('skills'), id: 'skills' },
                 { name: 'Projects', action: () => navigate('/projects'), id: 'projects' },
                 { name: 'Awards', action: () => navigate('/awards'), id: 'awards' }
-              ].map((item) => (
-                <button
-                  key={item.name}
-                  onClick={item.action}
-                  className={getNavItemStyle(item.id)}
-                >
-                  {item.name}
-                </button>
-              ))}
+              ].map((item) => {
+                const isActive = activeSection === item.id || 
+                  (location.pathname === '/projects' && item.id === 'projects') ||
+                  (location.pathname === '/awards' && item.id === 'awards');
+                
+                return (
+                  <button
+                    key={item.name}
+                    onClick={item.action}
+                    className={`text-gray-300 transition-all duration-500 ease-out transform px-3 py-1.5 rounded-full text-sm relative z-10 ${
+                      isActive 
+                        ? 'text-primary font-bold scale-105' 
+                        : 'hover:text-white hover:scale-105 font-normal'
+                    }`}
+                  >
+                    {item.name}
+                  </button>
+                );
+              })}
             </div>
           </div>
         </div>

@@ -23,7 +23,7 @@ const Contact = () => {
               <a href={`https://outlook.live.com/mail/0/deeplink/compose?to=${userInfo.contact.email}`} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 text-gray-300 hover:text-white transition-colors">
                 <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M7.5 1.5h9v3h-9v-3zM12 21l-7.5-6V7.5h15V15L12 21zm0-2.83L16.17 15H7.83L12 18.17z"/>
+                    <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
                   </svg>
                 </div>
                 <span>{userInfo.contact.email}</span>
