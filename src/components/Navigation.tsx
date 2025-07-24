@@ -85,14 +85,14 @@ const Navigation = () => {
 
   const getActiveIndicatorStyle = () => {
     const navItems = [
-      { id: 'home', name: 'Me', width: 40 },
-      { id: 'education', name: 'Education', width: 85 },
-      { id: 'experience', name: 'Experience', width: 90 },
-      { id: 'case-comp', name: 'Case Comp', width: 90 },
-      { id: 'community', name: 'Community', width: 95 },
-      { id: 'skills', name: 'Skills', width: 60 },
-      { id: 'projects', name: 'Projects', width: 75 },
-      { id: 'awards', name: 'Awards', width: 70 }
+      { id: 'home', name: 'Me', width: 36 },
+      { id: 'education', name: 'Education', width: 82 },
+      { id: 'experience', name: 'Experience', width: 88 },
+      { id: 'case-comp', name: 'Case Comp', width: 88 },
+      { id: 'community', name: 'Community', width: 90 },
+      { id: 'skills', name: 'Skills', width: 56 },
+      { id: 'projects', name: 'Projects', width: 72 },
+      { id: 'awards', name: 'Awards', width: 68 }
     ];
     
     const currentActive = location.pathname === '/projects' ? 'projects' : 
@@ -138,7 +138,7 @@ const Navigation = () => {
             ? 'bg-slate-900/90 border-slate-700/50 shadow-2xl shadow-primary/10' 
             : 'bg-slate-800/60 border-slate-600/30 shadow-lg'
         }`}>
-          <div className="flex items-center space-x-4 relative">
+          <div className="flex items-center space-x-5 relative">
             {/* Sliding rounded highlight */}
             <div 
               className="absolute bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full transition-all duration-500 ease-out shadow-lg shadow-primary/25"
@@ -151,19 +151,19 @@ const Navigation = () => {
             
             <button
               onClick={handleHomeClick}
-              className={`text-lg transition-all duration-500 px-3 py-1.5 rounded-full relative z-10 ${
+              className={`text-sm transition-all duration-500 px-3 py-1.5 rounded-full relative z-10 ${
                 activeSection === 'home' 
                   ? 'text-primary font-bold' 
-                  : 'text-white hover:text-primary font-normal'
+                  : 'text-gray-300 hover:text-white font-normal'
               }`}
             >
               Me
             </button>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-5">
               {[
                 { name: 'Education', action: () => scrollToSection('education'), id: 'education' },
                 { name: 'Experience', action: () => scrollToSection('experience'), id: 'experience' },
-                { name: 'Case Comp', action: () => scrollToSection('case-comp'), id: 'case-comp' },
+                { name: 'Case\u00A0Comp', action: () => scrollToSection('case-comp'), id: 'case-comp' },
                 { name: 'Community', action: () => scrollToSection('community'), id: 'community' },
                 { name: 'Skills', action: () => scrollToSection('skills'), id: 'skills' },
                 { name: 'Projects', action: () => navigate('/projects'), id: 'projects' },

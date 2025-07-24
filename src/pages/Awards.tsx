@@ -66,9 +66,9 @@ const AwardsPage = () => {
                     </h3>
                     <p className={`font-semibold ${
                       project.role === 'Champion' 
-                        ? 'text-yellow-400' 
+                        ? 'text-cyan-300' 
                         : project.role === '1st Runner Up' 
-                        ? 'text-orange-400' 
+                        ? 'text-sky-300' 
                         : 'text-primary'
                     }`}>
                       {project.role} • {project.period}
