@@ -14,7 +14,7 @@ const Hero = () => {
         <div className={`transform transition-all duration-1000 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 leading-tight animate-title-glow animate-title-float">
             {userInfo.name}
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
@@ -40,10 +40,11 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Animated background elements */}
+      {/* Cosmic energy rings */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 border border-primary/20 rounded-full animate-spin-slow"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 border border-accent/15 rounded-full animate-spin-slow animation-delay-2000" style={{animationDirection: 'reverse'}}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-primary/10 rounded-full animate-spin-slow animation-delay-1000"></div>
       </div>
     </section>
   );

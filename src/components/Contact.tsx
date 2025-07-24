@@ -19,7 +19,7 @@ const Contact = () => {
               </p>
             </div>
             
-            <div className="flex justify-center space-x-8">
+            <div className="flex flex-col items-center space-y-6">
               <a href={`mailto:${userInfo.contact.email}`} className="flex items-center space-x-4 text-gray-300 hover:text-white transition-colors">
                 <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-2xl text-primary-foreground">
                   📧
