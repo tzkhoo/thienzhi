@@ -6,7 +6,7 @@ export const userInfo = {
       "linkedin": "https://www.linkedin.com/in/thienzhi/",
       "CV": "/ThienZhi_CV.pdf"
     },
-    "summary_1": "Coding the future. Consulting and tech.",
+    "summary_1": "Coding the future. \nConsulting and tech.",
     "summary_2": "\" The rearview mirrow is for glancing, not for staring. \"",
     "education": [
       {
