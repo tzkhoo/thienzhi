@@ -76,11 +76,46 @@ const Navigation = () => {
       (location.pathname === '/projects' && sectionId === 'projects') ||
       (location.pathname === '/awards' && sectionId === 'awards');
     
-    return `text-gray-300 transition-all duration-300 transform px-3 py-1.5 rounded-full text-sm font-medium ${
+    return `text-gray-300 transition-all duration-500 ease-out transform px-3 py-1.5 rounded-full text-sm font-medium relative ${
       isActive 
-        ? 'text-primary bg-primary/20 scale-105 shadow-lg shadow-primary/25 border border-primary/30' 
+        ? 'text-primary scale-105' 
         : 'hover:text-white hover:scale-105 hover:bg-primary/10'
     }`;
+  };
+
+  const getActiveIndicatorStyle = () => {
+    const navItems = [
+      { id: 'home', name: 'Me' },
+      { id: 'education', name: 'Education' },
+      { id: 'experience', name: 'Experience' },
+      { id: 'case-comp', name: 'Case Comp' },
+      { id: 'community', name: 'Community' },
+      { id: 'skills', name: 'Skills' },
+      { id: 'projects', name: 'Projects' },
+      { id: 'awards', name: 'Awards' }
+    ];
+    
+    const currentActive = location.pathname === '/projects' ? 'projects' : 
+                         location.pathname === '/awards' ? 'awards' : activeSection;
+    
+    const activeIndex = navItems.findIndex(item => item.id === currentActive);
+    
+    if (activeIndex === -1) return { left: '0px', width: '0px' };
+    
+    // Calculate position based on index and estimated widths
+    const baseWidth = activeIndex === 0 ? 40 : 80; // 'Me' is shorter
+    const leftOffset = activeIndex === 0 ? 12 : 
+                      activeIndex === 1 ? 64 : 
+                      activeIndex === 2 ? 156 : 
+                      activeIndex === 3 ? 268 : 
+                      activeIndex === 4 ? 364 : 
+                      activeIndex === 5 ? 472 : 
+                      activeIndex === 6 ? 548 : 640;
+    
+    return {
+      left: `${leftOffset}px`,
+      width: `${baseWidth}px`
+    };
   };
 
   const getCurrentSectionName = () => {
@@ -106,12 +141,18 @@ const Navigation = () => {
             ? 'bg-slate-900/90 border-slate-700/50 shadow-2xl shadow-primary/10' 
             : 'bg-slate-800/60 border-slate-600/30 shadow-lg'
         }`}>
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-6 relative">
+            {/* Sliding indicator */}
+            <div 
+              className="absolute bottom-0 h-0.5 bg-primary rounded-full transition-all duration-500 ease-out"
+              style={getActiveIndicatorStyle()}
+            />
+            
             <button
               onClick={handleHomeClick}
-              className={`text-lg font-bold transition-all duration-300 px-3 py-1.5 rounded-full ${
+              className={`text-lg font-bold transition-all duration-500 px-3 py-1.5 rounded-full relative z-10 ${
                 activeSection === 'home' 
-                  ? 'text-primary bg-primary/20 shadow-lg shadow-primary/25 border border-primary/30' 
+                  ? 'text-primary' 
                   : 'text-white hover:text-primary'
               }`}
             >

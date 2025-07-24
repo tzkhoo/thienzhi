@@ -57,7 +57,7 @@ const Skills = () => {
             return (
               <Card 
                 key={category} 
-                className={`bg-slate-800/50 backdrop-blur-sm border-slate-700 hover:bg-slate-800/70 transition-all duration-300 hover:scale-[1.02] ${config?.borderColor || 'border-slate-700'}`}
+                className={`bg-slate-800/85 backdrop-blur-sm border-slate-700 hover:bg-slate-800/95 transition-all duration-300 hover:scale-[1.02] ${config?.borderColor || 'border-slate-700'}`}
               >
                 <CardHeader className="pb-4">
                   <div className="flex items-center space-x-3 mb-4">

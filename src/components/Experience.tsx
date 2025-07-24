@@ -24,7 +24,7 @@ const Experience = () => {
 
           <div className="space-y-8">
             {userInfo.work_experience.map((exp, index) => (
-              <Card key={index} className="bg-slate-800/50 border-slate-700 hover:bg-slate-800/70 hover:scale-105 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300">
+              <Card key={index} className="bg-slate-800/85 border-slate-700 hover:bg-slate-800/95 hover:scale-105 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300">
                 <CardHeader>
                   <div className="flex justify-between items-start mb-2">
                     <div>

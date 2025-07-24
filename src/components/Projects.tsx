@@ -45,7 +45,7 @@ const Projects = () => {
           {featuredProjects.map((project) => (
             <div 
               key={project.title}
-              className="group bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl overflow-hidden hover:border-primary transition-all duration-300 hover:scale-105"
+              className="group bg-slate-800/85 backdrop-blur-sm border border-slate-700 rounded-xl overflow-hidden hover:border-primary hover:bg-slate-800/95 transition-all duration-300 hover:scale-105"
             >
               <div className="relative overflow-hidden h-48 bg-slate-700/30">
                 <img 
