@@ -55,7 +55,7 @@ const Projects = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute top-4 right-4">
-                  <span className="px-3 py-1 bg-primary/80 text-primary-foreground text-sm rounded-full">
+                  <span className="px-3 py-1 bg-primary text-primary-foreground text-sm rounded-full font-medium">
                     {project.category}
                   </span>
                 </div>

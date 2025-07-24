@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -30,10 +32,15 @@ const Navigation = () => {
         }
         
         setActiveSection(currentSection);
+      } else if (location.pathname === '/projects') {
+        setActiveSection('projects');
+      } else if (location.pathname === '/awards') {
+        setActiveSection('awards');
       }
     };
     
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Call immediately to set initial state
     return () => window.removeEventListener('scroll', handleScroll);
   }, [location.pathname]);
 
@@ -76,55 +83,115 @@ const Navigation = () => {
     }`;
   };
 
+  const getCurrentSectionName = () => {
+    if (location.pathname === '/projects') return 'Projects';
+    if (location.pathname === '/awards') return 'Awards';
+    
+    switch (activeSection) {
+      case 'education': return 'Education';
+      case 'experience': return 'Experience';
+      case 'case-comp': return 'Case Comp';
+      case 'community': return 'Community';
+      case 'skills': return 'Skills';
+      default: return 'Me';
+    }
+  };
+
   return (
-    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300">
-      <div className={`px-6 py-3 rounded-full backdrop-blur-md border transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-slate-900/90 border-slate-700/50 shadow-2xl shadow-primary/10' 
-          : 'bg-slate-800/60 border-slate-600/30 shadow-lg'
-      }`}>
-        <div className="flex items-center space-x-6">
+    <>
+      {/* Desktop Navigation */}
+      <nav className="hidden md:block fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300">
+        <div className={`px-6 py-3 rounded-full backdrop-blur-md border transition-all duration-300 ${
+          isScrolled 
+            ? 'bg-slate-900/90 border-slate-700/50 shadow-2xl shadow-primary/10' 
+            : 'bg-slate-800/60 border-slate-600/30 shadow-lg'
+        }`}>
+          <div className="flex items-center space-x-6">
+            <button
+              onClick={handleHomeClick}
+              className={`text-lg font-bold transition-all duration-300 px-3 py-1.5 rounded-full ${
+                activeSection === 'home' 
+                  ? 'text-primary bg-primary/20 shadow-lg shadow-primary/25 border border-primary/30' 
+                  : 'text-white hover:text-primary'
+              }`}
+            >
+              Me
+            </button>
+            <div className="flex items-center space-x-4">
+              {[
+                { name: 'Education', action: () => scrollToSection('education'), id: 'education' },
+                { name: 'Experience', action: () => scrollToSection('experience'), id: 'experience' },
+                { name: 'Case Comp', action: () => scrollToSection('case-comp'), id: 'case-comp' },
+                { name: 'Community', action: () => scrollToSection('community'), id: 'community' },
+                { name: 'Skills', action: () => scrollToSection('skills'), id: 'skills' },
+                { name: 'Projects', action: () => navigate('/projects'), id: 'projects' },
+                { name: 'Awards', action: () => navigate('/awards'), id: 'awards' }
+              ].map((item) => (
+                <button
+                  key={item.name}
+                  onClick={item.action}
+                  className={getNavItemStyle(item.id)}
+                >
+                  {item.name}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile Navigation */}
+      <nav className="md:hidden fixed top-4 right-4 z-50">
+        <div className={`flex items-center space-x-3 px-4 py-3 rounded-full backdrop-blur-md border transition-all duration-300 ${
+          isScrolled 
+            ? 'bg-slate-900/90 border-slate-700/50 shadow-2xl shadow-primary/10' 
+            : 'bg-slate-800/60 border-slate-600/30 shadow-lg'
+        }`}>
+          <span className="text-primary font-bold text-lg">{getCurrentSectionName()}</span>
           <button
-            onClick={handleHomeClick}
-            className={`text-lg font-bold transition-all duration-300 px-3 py-1.5 rounded-full ${
-              activeSection === 'home' 
-                ? 'text-primary bg-primary/20 shadow-lg shadow-primary/25 border border-primary/30' 
-                : 'text-white hover:text-primary'
-            }`}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="text-gray-300 hover:text-white transition-colors duration-300"
           >
-            Me
+            {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
-          <div className="hidden md:flex items-center space-x-4">
+        </div>
+
+        {/* Mobile Menu Dropdown */}
+        {isMobileMenuOpen && (
+          <div className="absolute top-full right-0 mt-2 w-48 bg-slate-900/95 backdrop-blur-md border border-slate-700/50 rounded-xl shadow-xl overflow-hidden">
+            <button
+              onClick={() => {
+                handleHomeClick();
+                setIsMobileMenuOpen(false);
+              }}
+              className="w-full text-left px-4 py-3 text-white hover:bg-primary/20 hover:text-primary transition-colors"
+            >
+              Me
+            </button>
             {[
-              { name: 'Education', action: () => scrollToSection('education'), id: 'education' },
-              { name: 'Experience', action: () => scrollToSection('experience'), id: 'experience' },
-              { name: 'Awards', action: () => scrollToSection('case-comp'), id: 'case-comp' },
-              { name: 'Community', action: () => scrollToSection('community'), id: 'community' },
-              { name: 'Skills', action: () => scrollToSection('skills'), id: 'skills' },
-              { name: 'Projects', action: () => navigate('/projects'), id: 'projects' },
-              { name: 'Awards', action: () => navigate('/awards'), id: 'awards' }
+              { name: 'Education', action: () => scrollToSection('education') },
+              { name: 'Experience', action: () => scrollToSection('experience') },
+              { name: 'Case Comp', action: () => scrollToSection('case-comp') },
+              { name: 'Community', action: () => scrollToSection('community') },
+              { name: 'Skills', action: () => scrollToSection('skills') },
+              { name: 'Projects', action: () => navigate('/projects') },
+              { name: 'Awards', action: () => navigate('/awards') }
             ].map((item) => (
               <button
                 key={item.name}
-                onClick={item.action}
-                className={getNavItemStyle(item.id)}
+                onClick={() => {
+                  item.action();
+                  setIsMobileMenuOpen(false);
+                }}
+                className="w-full text-left px-4 py-3 text-white hover:bg-primary/20 hover:text-primary transition-colors"
               >
                 {item.name}
               </button>
             ))}
           </div>
-          
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button className="text-gray-300 hover:text-white transition-colors duration-300">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </nav>
+        )}
+      </nav>
+    </>
   );
 };
 
