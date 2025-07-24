@@ -3,16 +3,39 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      
+      // Check which section is currently in view
+      if (location.pathname === '/') {
+        const sections = ['education', 'experience', 'case-comp', 'community', 'skills'];
+        const scrollPosition = window.scrollY + 200; // Offset for better detection
+        
+        let currentSection = 'home';
+        
+        for (const sectionId of sections) {
+          const element = document.getElementById(sectionId);
+          if (element) {
+            const { offsetTop, offsetHeight } = element;
+            if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+              currentSection = sectionId;
+              break;
+            }
+          }
+        }
+        
+        setActiveSection(currentSection);
+      }
     };
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   const scrollToSection = (sectionId: string) => {
     // If we're not on the home page, navigate to home first
@@ -34,10 +57,23 @@ const Navigation = () => {
 
   const handleHomeClick = () => {
     navigate('/');
+    setActiveSection('home');
     // Scroll to top after navigation
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }, 100);
+  };
+
+  const getNavItemStyle = (sectionId: string) => {
+    const isActive = activeSection === sectionId || 
+      (location.pathname === '/projects' && sectionId === 'projects') ||
+      (location.pathname === '/awards' && sectionId === 'awards');
+    
+    return `text-gray-300 transition-all duration-300 transform px-3 py-1.5 rounded-full text-sm font-medium ${
+      isActive 
+        ? 'text-primary bg-primary/20 scale-105 shadow-lg shadow-primary/25 border border-primary/30' 
+        : 'hover:text-white hover:scale-105 hover:bg-primary/10'
+    }`;
   };
 
   return (
@@ -50,25 +86,28 @@ const Navigation = () => {
         <div className="flex items-center space-x-6">
           <button
             onClick={handleHomeClick}
-            className="text-lg font-bold text-white hover:text-primary transition-colors duration-300"
+            className={`text-lg font-bold transition-all duration-300 px-3 py-1.5 rounded-full ${
+              activeSection === 'home' 
+                ? 'text-primary bg-primary/20 shadow-lg shadow-primary/25 border border-primary/30' 
+                : 'text-white hover:text-primary'
+            }`}
           >
             Me
           </button>
           <div className="hidden md:flex items-center space-x-4">
             {[
-              { name: 'Education', action: () => scrollToSection('education') },
-              { name: 'Experience', action: () => scrollToSection('experience') },
-              { name: 'Case Comp', action: () => scrollToSection('case-comp') },
-              { name: 'Community', action: () => scrollToSection('community') },
-              { name: 'Skills', action: () => scrollToSection('skills') },
-              { name: 'Contact', action: () => scrollToSection('contact') },
-              { name: 'Projects', action: () => navigate('/projects') },
-              { name: 'Awards', action: () => navigate('/awards') }
+              { name: 'Education', action: () => scrollToSection('education'), id: 'education' },
+              { name: 'Experience', action: () => scrollToSection('experience'), id: 'experience' },
+              { name: 'Awards', action: () => scrollToSection('case-comp'), id: 'case-comp' },
+              { name: 'Community', action: () => scrollToSection('community'), id: 'community' },
+              { name: 'Skills', action: () => scrollToSection('skills'), id: 'skills' },
+              { name: 'Projects', action: () => navigate('/projects'), id: 'projects' },
+              { name: 'Awards', action: () => navigate('/awards'), id: 'awards' }
             ].map((item) => (
               <button
                 key={item.name}
                 onClick={item.action}
-                className="text-gray-300 hover:text-white transition-all duration-300 hover:scale-105 transform px-3 py-1.5 rounded-full hover:bg-primary/20 text-sm font-medium"
+                className={getNavItemStyle(item.id)}
               >
                 {item.name}
               </button>
