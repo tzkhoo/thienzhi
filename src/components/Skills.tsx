@@ -28,9 +28,9 @@ const Skills = () => {
       bgColor: "bg-primary/10",
       borderColor: "border-primary/30"
     },
-    general: {
+    business_design: {
       icon: Briefcase,
-      title: "General Tools",
+      title: "Business & Design",
       color: "from-slate-500 to-gray-500",
       bgColor: "bg-slate-500/10",
       borderColor: "border-slate-500/30"
@@ -79,19 +79,28 @@ const Skills = () => {
                         className="group relative bg-slate-700/30 backdrop-blur-sm border border-slate-600/50 rounded-lg px-4 py-3 text-gray-300 hover:border-primary/50 hover:text-white transition-all duration-300 hover:scale-105 hover:bg-slate-700/50"
                         style={{ animationDelay: `${index * 50}ms` }}
                       >
-                        <div className="flex items-center justify-between">
-                          <span className="text-sm font-medium">{skill}</span>
-                          <div className="flex space-x-1">
-                            {Array.from({ length: 3 }, (_, i) => (
-                              <div 
-                                key={i}
-                                className={`w-1.5 h-1.5 rounded-full transition-colors duration-300 ${
-                                  i < 2 ? 'bg-primary' : 'bg-slate-600 group-hover:bg-primary'
-                                }`}
-                              />
-                            ))}
-                          </div>
-                        </div>
+                         <div className="flex items-center justify-between">
+                           <span className="text-sm font-medium">{skill}</span>
+                           <div className="flex space-x-1">
+                             {Array.from({ length: 3 }, (_, i) => {
+                               let skillLevel = 1; // default 1 dot
+                               
+                               // Programming skills
+                               if (skill === "Python" || skill === "n8n") skillLevel = 3;
+                               else if (skill === "C++" || skill === "SQL" || skill === "Figma") skillLevel = 2;
+                               else if (skill === "Powerpoint" || skill === "Capcut" || skill === "Canva") skillLevel = 3;
+                               
+                               return (
+                                 <div 
+                                   key={i}
+                                   className={`w-1.5 h-1.5 rounded-full transition-colors duration-300 ${
+                                     i < skillLevel ? 'bg-primary' : 'bg-slate-600 group-hover:bg-primary'
+                                   }`}
+                                 />
+                               );
+                             })}
+                           </div>
+                         </div>
                         
                         {/* Hover effect gradient */}
                         <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>

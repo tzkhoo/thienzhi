@@ -106,10 +106,10 @@ export const userInfo = {
       }
     ],
     "skills": {
-      "programming": ["Python (including ML libraries)", "C++", "Streamlit", "HTML", "CSS", "Tailwind", "Java", "ReactJS", "NodeJS"],
-      "data_analysis_visualization": ["R", "SQL", "Tableau", "Excel"],
-      "tools_services": ["MongoDB", "AWS", "Vercel", "Google Cloud"],
-      "general": ["Microsoft Office", "Canva"]
+      "programming": ["Python", "C++", "HTML", "Java", "Kotlin", "Tailwind"],
+      "data_analysis_visualization": ["Python", "SQL", "Excel"],
+      "tools_services": ["MongoDB", "AWS", "Vercel", "Google Cloud", "Render", "n8n"],
+      "business_design": ["Powerpoint", "Figma", "Capcut", "Canva", "Photoshop"]
     },
     "languages": ["English (Native)", "Mandarin (Fluent)", "Cantonese (Conversational)", "Malay (Conversational)"],
     "resume_path": "/ThienZhi_CV.pdf",

@@ -2,6 +2,10 @@ import { useState, useEffect, useRef } from 'react';
 import { MessageCircle, X, Send, RotateCcw } from 'lucide-react';
 
 const ChatbotWidget = () => {
+  // Rate limiting: 10 messages per hour
+  const MAX_MESSAGES_PER_HOUR = 10;
+  const RATE_LIMIT_WINDOW = 60 * 60 * 1000; // 1 hour in milliseconds
+
   const suggestionOptions = [
     { label: "Hobby", message: "What are some of your hobbies?" },
     { label: "Experience", message: "What is your work experience?" },
@@ -38,6 +42,7 @@ const ChatbotWidget = () => {
   const [message, setMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [currentSuggestions, setCurrentSuggestions] = useState(() => getRandomSuggestions());
+  const [userMessageTimestamps, setUserMessageTimestamps] = useState<number[]>([]);
   const [messages, setMessages] = useState([
     { 
       id: 1, 
@@ -52,8 +57,36 @@ const ChatbotWidget = () => {
     setCurrentSuggestions(getRandomSuggestions());
   };
 
+  const checkRateLimit = () => {
+    const now = Date.now();
+    const recentMessages = userMessageTimestamps.filter(
+      timestamp => now - timestamp < RATE_LIMIT_WINDOW
+    );
+    return recentMessages.length < MAX_MESSAGES_PER_HOUR;
+  };
+
+  const updateRateLimit = () => {
+    const now = Date.now();
+    const updatedTimestamps = [...userMessageTimestamps, now].filter(
+      timestamp => now - timestamp < RATE_LIMIT_WINDOW
+    );
+    setUserMessageTimestamps(updatedTimestamps);
+  };
+
   const handleSendMessage = async () => {
     if (!message.trim() || isLoading) return;
+    
+    // Check rate limit
+    if (!checkRateLimit()) {
+      const rateLimitResponse = {
+        id: messages.length + 1,
+        text: "I appreciate your enthusiasm! However, I need to take a short break. Please try again in a bit.",
+        isBot: true,
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, rateLimitResponse]);
+      return;
+    }
     
     const userMessage = {
       id: messages.length + 1,
@@ -63,6 +96,7 @@ const ChatbotWidget = () => {
     };
     
     setMessages(prev => [...prev, userMessage]);
+    updateRateLimit(); // Track this message for rate limiting
     const currentMessage = message;
     setMessage('');
     setIsLoading(true);
