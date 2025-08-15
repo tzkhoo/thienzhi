@@ -4,11 +4,16 @@ import { useEffect, useState } from 'react';
 
 const CV = () => {
   const navigate = useNavigate();
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(true); // Default to mobile for safety
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+      const userAgent = navigator.userAgent.toLowerCase();
+      const isMobileDevice = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini|mobile/i.test(userAgent);
+      const isSmallScreen = window.innerWidth < 1024; // Increased threshold
+      const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      
+      setIsMobile(isMobileDevice || isSmallScreen || isTouchDevice);
     };
     
     checkMobile();
@@ -35,32 +40,41 @@ const CV = () => {
             
             {/* Mobile-friendly CV display */}
             {isMobile ? (
-              <div className="p-6 text-center">
-                <div className="bg-slate-800/50 rounded-lg p-8 mb-6">
-                  <Eye className="w-16 h-16 text-primary mx-auto mb-4" />
-                  <h2 className="text-xl font-semibold text-white mb-2">View on Mobile</h2>
-                  <p className="text-gray-300 mb-6">
-                    For the best viewing experience on mobile, please download the CV or open it in a new tab.
+              <div className="p-4 md:p-6 text-center">
+                <div className="bg-slate-800/50 rounded-lg p-6 md:p-8 mb-6">
+                  <Eye className="w-12 h-12 md:w-16 md:h-16 text-primary mx-auto mb-4" />
+                  <h2 className="text-lg md:text-xl font-semibold text-white mb-2">📱 Mobile Optimized View</h2>
+                  <p className="text-gray-300 mb-4 text-sm md:text-base">
+                    Mobile browsers have restrictions for displaying PDFs inline. Choose an option below:
                   </p>
-                  <div className="flex flex-col gap-3">
+                  <div className="flex flex-col gap-3 max-w-sm mx-auto">
                     <a 
                       href="/ThienZhi_CV.pdf" 
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full font-semibold hover:scale-105 transform transition-all duration-300 shadow-lg"
+                      className="inline-flex items-center justify-center px-4 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full font-semibold hover:scale-105 transform transition-all duration-300 shadow-lg text-sm"
+                      onClick={(e) => {
+                        // Fallback for blocked popups
+                        setTimeout(() => {
+                          window.location.href = "/ThienZhi_CV.pdf";
+                        }, 100);
+                      }}
                     >
                       <Eye className="w-4 h-4 mr-2" />
-                      View CV in New Tab
+                      Open PDF in Browser
                     </a>
                     <a 
                       href="/ThienZhi_CV.pdf" 
                       download="ThienZhi_KHOO_CV.pdf"
-                      className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-full font-semibold hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-primary/25"
+                      className="inline-flex items-center justify-center px-4 py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-full font-semibold hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-primary/25 text-sm"
                     >
                       <Download className="w-4 h-4 mr-2" />
-                      Download CV
+                      Download PDF to Device
                     </a>
                   </div>
+                  <p className="text-xs text-gray-400 mt-4">
+                    💡 Tip: If buttons don't work, try using a different browser or desktop version
+                  </p>
                 </div>
               </div>
             ) : (
