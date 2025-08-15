@@ -85,10 +85,10 @@ const Skills = () => {
                              {Array.from({ length: 3 }, (_, i) => {
                                let skillLevel = 1; // default 1 dot
                                
-                               // Programming skills
-                               if (skill === "Python" || skill === "n8n") skillLevel = 3;
-                               else if (skill === "C++" || skill === "SQL" || skill === "Figma") skillLevel = 2;
-                               else if (skill === "Powerpoint" || skill === "Capcut" || skill === "Canva") skillLevel = 3;
+                                // Programming skills
+                                if (skill === "Python" || skill === "n8n") skillLevel = 3;
+                                else if (skill === "C++" || skill === "SQL" || skill === "Figma" || skill === "MongoDB" || skill === "Vercel" || skill === "Google Cloud") skillLevel = 2;
+                                else if (skill === "Powerpoint" || skill === "Capcut" || skill === "Canva") skillLevel = 3;
                                
                                return (
                                  <div 
