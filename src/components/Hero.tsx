@@ -33,7 +33,7 @@ const Hero = () => {
           <div className="relative">
             <div className="relative mb-8 pt-4 sm:pt-8 md:pt-0">
               <GradientText 
-                className="text-5xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight animate-title-float"
+                className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight animate-title-float"
                 animationSpeed={7.5}
                 showBorder={false}
               >

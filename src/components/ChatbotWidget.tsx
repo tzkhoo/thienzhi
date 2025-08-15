@@ -171,12 +171,12 @@ const ChatbotWidget = () => {
                   key={msg.id}
                   className={`flex items-start space-x-3 ${msg.isBot ? 'justify-start' : 'justify-end'}`}
                 >
-                  {/* Avatar */}
-                  {msg.isBot && (
-                    <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-yellow-400 to-yellow-600">
-                      <span className="text-slate-900 font-bold text-sm">TZ</span>
-                    </div>
-                  )}
+                   {/* Avatar */}
+                   {msg.isBot && (
+                     <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-yellow-400 to-yellow-600 overflow-hidden">
+                       <img src="/thienzhicard.png" alt="Thien Zhi" className="w-full h-full object-cover" />
+                     </div>
+                   )}
                   
                   {/* Message bubble */}
                   <div className={`flex flex-col max-w-xs lg:max-w-md ${msg.isBot ? '' : 'items-end'}`}>
@@ -211,10 +211,10 @@ const ChatbotWidget = () => {
               
               {/* Loading indicator */}
               {isLoading && (
-                <div className="flex items-start space-x-3 justify-start">
-                  <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-yellow-400 to-yellow-600">
-                    <span className="text-slate-900 font-bold text-sm">TZ</span>
-                  </div>
+                 <div className="flex items-start space-x-3 justify-start">
+                   <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-yellow-400 to-yellow-600 overflow-hidden">
+                     <img src="/thienzhicard.png" alt="Thien Zhi" className="w-full h-full object-cover" />
+                   </div>
                   <div className="flex flex-col max-w-xs lg:max-w-md">
                     <span className="text-xs mb-1 text-yellow-400">Thien Zhi AI</span>
                     <div className="px-4 py-3 rounded-lg bg-slate-700 text-white border border-yellow-400/30 rounded-tl-none">
