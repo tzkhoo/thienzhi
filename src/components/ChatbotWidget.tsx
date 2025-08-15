@@ -232,16 +232,19 @@ const ChatbotWidget = () => {
             {/* Suggestion bubbles - positioned above input */}
             <div className="relative px-4 py-3 border-b border-slate-700/50 z-10">
               <div className="flex items-center justify-between">
-                <div className="flex gap-2 flex-1">
-                  {currentSuggestions.map((suggestion, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setMessage(suggestion.message)}
-                      className="px-3 py-2 bg-blue-900/30 backdrop-blur-sm hover:bg-blue-800/40 text-cyan-300 text-sm rounded-full border border-blue-500/60 hover:border-blue-400/80 transition-all duration-200"
-                    >
-                      {suggestion.label}
-                    </button>
-                  ))}
+                <div className="flex items-center gap-3 flex-1">
+                  <span className="hidden md:block text-sm text-gray-400 whitespace-nowrap">Suggested Prompts:</span>
+                  <div className="flex gap-2">
+                    {currentSuggestions.map((suggestion, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setMessage(suggestion.message)}
+                        className="px-3 py-2 bg-blue-900/30 backdrop-blur-sm hover:bg-blue-800/40 text-cyan-300 text-sm rounded-full border border-blue-500/60 hover:border-blue-400/80 transition-all duration-200"
+                      >
+                        {suggestion.label}
+                      </button>
+                    ))}
+                  </div>
                 </div>
                 <button
                   onClick={refreshSuggestions}
