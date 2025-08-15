@@ -1,10 +1,43 @@
 import { useState, useEffect, useRef } from 'react';
-import { MessageCircle, X, Send } from 'lucide-react';
+import { MessageCircle, X, Send, RotateCcw } from 'lucide-react';
 
 const ChatbotWidget = () => {
+  const suggestionOptions = [
+    { label: "Hobby", message: "What are some of your hobbies?" },
+    { label: "Experience", message: "What is your work experience?" },
+    { label: "Passion", message: "What are your passion?" },
+    { label: "Pets", message: "Do you have any pets?" },
+    { label: "Academic", message: "Where and what do you study?" },
+    { label: "Sports", message: "What sports do you play?" },
+    { label: "Introduction", message: "Can you please introduce yourself?" },
+    { label: "Origin", message: "Which country are you from?" },
+    { label: "Language", message: "What languages can you speak?" },
+    { label: "Music", message: "What type of music do you enjoy?" },
+    { label: "Books", message: "What kind of books do you read?" },
+    { label: "Travel", message: "What countries have you visited?" },
+    { label: "Food", message: "What is your favorite type of food?" },
+    { label: "Movie", message: "What is your favorite movie or series?" },
+    { label: "Skill", message: "What skill are you most proud of?" },
+    { label: "Goal", message: "What is your biggest goal in life?" },
+    { label: "Dream", message: "What is your dream destination to visit?" },
+    { label: "Habit", message: "What daily habit do you follow?" },
+    { label: "Color", message: "What is your favorite color and why?" },
+    { label: "Season", message: "Which season do you like the most?" },
+    { label: "Game", message: "What games do you like to play?" },
+    { label: "Place", message: "What is your favorite place to relax?" },
+    { label: "Wish", message: "If you had one wish, what would it be?" },
+    { label: "Quote", message: "What is your favorite quote or saying?" }
+  ];
+
+  const getRandomSuggestions = () => {
+    const shuffled = [...suggestionOptions].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, 2);
+  };
+
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [currentSuggestions, setCurrentSuggestions] = useState(() => getRandomSuggestions());
   const [messages, setMessages] = useState([
     { 
       id: 1, 
@@ -14,6 +47,10 @@ const ChatbotWidget = () => {
     }
   ]);
   const chatboxRef = useRef<HTMLDivElement>(null);
+
+  const refreshSuggestions = () => {
+    setCurrentSuggestions(getRandomSuggestions());
+  };
 
   const handleSendMessage = async () => {
     if (!message.trim() || isLoading) return;
@@ -194,24 +231,24 @@ const ChatbotWidget = () => {
 
             {/* Suggestion bubbles - positioned above input */}
             <div className="relative px-4 py-3 border-b border-slate-700/50 z-10">
-              <div className="flex flex-wrap gap-2">
+              <div className="flex items-center justify-between">
+                <div className="flex gap-2 flex-1">
+                  {currentSuggestions.map((suggestion, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setMessage(suggestion.message)}
+                      className="px-3 py-2 bg-blue-900/30 backdrop-blur-sm hover:bg-blue-800/40 text-cyan-300 text-sm rounded-full border border-blue-500/60 hover:border-blue-400/80 transition-all duration-200"
+                    >
+                      {suggestion.label}
+                    </button>
+                  ))}
+                </div>
                 <button
-                  onClick={() => setMessage("Hi! I need help with customer service. Can you assist me?")}
-                  className="px-3 py-2 bg-blue-900/30 backdrop-blur-sm hover:bg-blue-800/40 text-cyan-300 text-sm rounded-full border border-blue-500/60 hover:border-blue-400/80 transition-all duration-200"
+                  onClick={refreshSuggestions}
+                  className="w-8 h-8 flex items-center justify-center bg-yellow-400/20 backdrop-blur-sm hover:bg-yellow-400/30 text-yellow-400 rounded-full border border-yellow-400/60 hover:border-yellow-400/80 transition-all duration-200 ml-3 flex-shrink-0"
+                  aria-label="Refresh suggestions"
                 >
-                  Customer service
-                </button>
-                <button
-                  onClick={() => setMessage("I'm interested in your sales services. Can you help me?")}
-                  className="px-3 py-2 bg-blue-900/30 backdrop-blur-sm hover:bg-blue-800/40 text-cyan-300 text-sm rounded-full border border-blue-500/60 hover:border-blue-400/80 transition-all duration-200"
-                >
-                  Sales Assistant
-                </button>
-                <button
-                  onClick={() => setMessage("I have a general enquiry. Can you provide more information?")}
-                  className="px-3 py-2 bg-blue-900/30 backdrop-blur-sm hover:bg-blue-800/40 text-cyan-300 text-sm rounded-full border border-blue-500/60 hover:border-blue-400/80 transition-all duration-200"
-                >
-                  Enquiry
+                  <RotateCcw className="w-4 h-4" />
                 </button>
               </div>
             </div>
