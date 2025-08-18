@@ -46,7 +46,7 @@ const ChatbotWidget = () => {
   const [messages, setMessages] = useState([
     { 
       id: 1, 
-      text: "Hi I am a virtual replica of Thien Zhi, ask me anything about myself!", 
+      text: "Hi I am a digital version of Thien Zhi, ask me anything about myself!", 
       isBot: true, 
       timestamp: new Date() 
     }
