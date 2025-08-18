@@ -41,6 +41,7 @@ const ChatbotWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [thinkingTimer, setThinkingTimer] = useState(0);
   const [currentSuggestions, setCurrentSuggestions] = useState(() => getRandomSuggestions());
   const [userMessageTimestamps, setUserMessageTimestamps] = useState<number[]>([]);
   const [messages, setMessages] = useState([
@@ -52,6 +53,7 @@ const ChatbotWidget = () => {
     }
   ]);
   const chatboxRef = useRef<HTMLDivElement>(null);
+  const timerIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const refreshSuggestions = () => {
     setCurrentSuggestions(getRandomSuggestions());
@@ -100,6 +102,12 @@ const ChatbotWidget = () => {
     const currentMessage = message;
     setMessage('');
     setIsLoading(true);
+    setThinkingTimer(0);
+    
+    // Start timer
+    timerIntervalRef.current = setInterval(() => {
+      setThinkingTimer(prev => prev + 0.1);
+    }, 100);
     
     try {
       console.log('Sending message to webhook:', currentMessage);
@@ -145,6 +153,11 @@ const ChatbotWidget = () => {
       setMessages(prev => [...prev, errorResponse]);
     } finally {
       setIsLoading(false);
+      setThinkingTimer(0);
+      if (timerIntervalRef.current) {
+        clearInterval(timerIntervalRef.current);
+        timerIntervalRef.current = null;
+      }
     }
   };
 
@@ -168,6 +181,15 @@ const ChatbotWidget = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isOpen]);
+
+  // Cleanup timer on unmount
+  useEffect(() => {
+    return () => {
+      if (timerIntervalRef.current) {
+        clearInterval(timerIntervalRef.current);
+      }
+    };
+  }, []);
 
   return (
     <>
@@ -268,13 +290,20 @@ const ChatbotWidget = () => {
                    </div>
                   <div className="flex flex-col max-w-xs lg:max-w-md">
                     <span className="text-xs mb-1 text-yellow-400">Thien Zhi AI</span>
-                    <div className="px-4 py-3 rounded-lg bg-slate-700 text-white border border-yellow-400/30 rounded-tl-none">
-                      <div className="flex space-x-1">
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full animate-bounce"></div>
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-                      </div>
-                    </div>
+                     <div className="px-4 py-3 rounded-lg bg-slate-700 text-white border border-yellow-400/30 rounded-tl-none">
+                       <div className="flex items-center justify-between">
+                         <div className="flex space-x-1">
+                           <div className="w-2 h-2 bg-yellow-400 rounded-full animate-bounce"></div>
+                           <div className="w-2 h-2 bg-yellow-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                           <div className="w-2 h-2 bg-yellow-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                         </div>
+                         <div className="flex items-center space-x-2 text-xs text-gray-400">
+                           <span>{thinkingTimer.toFixed(1)}s</span>
+                           <span>/</span>
+                           <span>~5s</span>
+                         </div>
+                       </div>
+                     </div>
                   </div>
                 </div>
               )}
