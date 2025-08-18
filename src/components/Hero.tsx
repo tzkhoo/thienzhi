@@ -133,7 +133,7 @@ const Hero = () => {
                   </span>
                 </div>
                 <p className="text-gray-300 text-center text-xs md:text-sm font-medium">
-                  <span className="sm:hidden">HKD cash prize</span>
+                  <span className="sm:hidden">Cash Prize</span>
                   <span className="hidden sm:inline">Cash Prize Awarded</span>
                 </p>
               </div>
