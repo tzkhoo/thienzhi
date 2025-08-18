@@ -103,7 +103,7 @@ const ChatbotWidget = () => {
     
     try {
       console.log('Sending message to webhook:', currentMessage);
-      const response = await fetch('https://wonder4.app.n8n.cloud/webhook/ad30832c-1f6b-4293-8eec-85490817e62d', {
+      const response = await fetch('https://wonder4.app.n8n.cloud/webhook-test/ad30832c-1f6b-4293-8eec-85490817e62d', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -114,9 +114,10 @@ const ChatbotWidget = () => {
       });
       
       console.log('Response status:', response.status);
-      console.log('Response headers:', response.headers);
+      console.log('Response ok:', response.ok);
       
       if (!response.ok) {
+        console.error('Response not ok:', response.status, response.statusText);
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       
@@ -125,17 +126,19 @@ const ChatbotWidget = () => {
       
       const botResponse = {
         id: messages.length + 2,
-        text: data.output || "Sorry, I couldn't process your request. Please try again.",
+        text: data.output || data.response || "No output received from webhook",
         isBot: true,
         timestamp: new Date()
       };
       
       setMessages(prev => [...prev, botResponse]);
     } catch (error) {
-      console.error('Error calling webhook:', error);
+      console.error('Full error details:', error);
+      console.error('Error message:', error.message);
+      console.error('Error stack:', error.stack);
       const errorResponse = {
         id: messages.length + 2,
-        text: "Sorry, I'm having trouble connecting right now. Please try again later.",
+        text: `Debug: Error occurred - ${error.message}. Check console for details.`,
         isBot: true,
         timestamp: new Date()
       };
