@@ -41,6 +41,7 @@ const ChatbotWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [thinkingTimer, setThinkingTimer] = useState(0);
   const [currentSuggestions, setCurrentSuggestions] = useState(() => getRandomSuggestions());
   const [userMessageTimestamps, setUserMessageTimestamps] = useState<number[]>([]);
   const [messages, setMessages] = useState([
@@ -52,6 +53,7 @@ const ChatbotWidget = () => {
     }
   ]);
   const chatboxRef = useRef<HTMLDivElement>(null);
+  const timerIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const refreshSuggestions = () => {
     setCurrentSuggestions(getRandomSuggestions());
@@ -100,8 +102,15 @@ const ChatbotWidget = () => {
     const currentMessage = message;
     setMessage('');
     setIsLoading(true);
+    setThinkingTimer(0);
+    
+    // Start timer
+    timerIntervalRef.current = setInterval(() => {
+      setThinkingTimer(prev => prev + 0.1);
+    }, 100);
     
     try {
+      console.log('Sending message to webhook:', currentMessage);
       const response = await fetch('https://wonder4.app.n8n.cloud/webhook/ad30832c-1f6b-4293-8eec-85490817e62d', {
         method: 'POST',
         headers: {
@@ -112,27 +121,43 @@ const ChatbotWidget = () => {
         })
       });
       
+      console.log('Response status:', response.status);
+      console.log('Response ok:', response.ok);
+      
+      if (!response.ok) {
+        console.error('Response not ok:', response.status, response.statusText);
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
       const data = await response.json();
+      console.log('Response data:', data);
       
       const botResponse = {
         id: messages.length + 2,
-        text: data.response || "Sorry, I couldn't process your request. Please try again.",
+        text: data.output || data.response || "No output received from webhook",
         isBot: true,
         timestamp: new Date()
       };
       
       setMessages(prev => [...prev, botResponse]);
     } catch (error) {
-      console.error('Error calling webhook:', error);
+      console.error('Full error details:', error);
+      console.error('Error message:', error.message);
+      console.error('Error stack:', error.stack);
       const errorResponse = {
         id: messages.length + 2,
-        text: "Sorry, I'm having trouble connecting right now. Please try again later.",
+        text: `Debug: Error occurred - ${error.message}. Check console for details.`,
         isBot: true,
         timestamp: new Date()
       };
       setMessages(prev => [...prev, errorResponse]);
     } finally {
       setIsLoading(false);
+      setThinkingTimer(0);
+      if (timerIntervalRef.current) {
+        clearInterval(timerIntervalRef.current);
+        timerIntervalRef.current = null;
+      }
     }
   };
 
@@ -156,6 +181,15 @@ const ChatbotWidget = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isOpen]);
+
+  // Cleanup timer on unmount
+  useEffect(() => {
+    return () => {
+      if (timerIntervalRef.current) {
+        clearInterval(timerIntervalRef.current);
+      }
+    };
+  }, []);
 
   return (
     <>
@@ -256,13 +290,34 @@ const ChatbotWidget = () => {
                    </div>
                   <div className="flex flex-col max-w-xs lg:max-w-md">
                     <span className="text-xs mb-1 text-yellow-400">Thien Zhi AI</span>
-                    <div className="px-4 py-3 rounded-lg bg-slate-700 text-white border border-yellow-400/30 rounded-tl-none">
-                      <div className="flex space-x-1">
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full animate-bounce"></div>
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-                      </div>
-                    </div>
+                     <div className="px-4 py-3 rounded-lg bg-slate-700 text-white border border-yellow-400/30 rounded-tl-none">
+                       <div className="flex space-x-1 mb-3">
+                         <div className="w-2 h-2 bg-yellow-400 rounded-full animate-bounce"></div>
+                         <div className="w-2 h-2 bg-yellow-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                         <div className="w-2 h-2 bg-yellow-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                       </div>
+                       
+                       {/* Thinking Status Button */}
+                       <div className="inline-flex items-center px-3 py-2 bg-gradient-to-r from-yellow-400/20 to-yellow-500/20 border border-yellow-400/40 rounded-full backdrop-blur-sm animate-pulse">
+                         <div className="flex items-center space-x-2">
+                           <div className="w-3 h-3 bg-yellow-400 rounded-full animate-pulse"></div>
+                           <span className="text-yellow-400 text-sm font-medium">
+                             I am thinking... ({thinkingTimer.toFixed(1)}s)
+                           </span>
+                         </div>
+                         <div className="ml-3 text-gray-400 text-xs">
+                           Est. 5s
+                         </div>
+                       </div>
+                       
+                       {/* Progress Bar */}
+                       <div className="mt-3 w-full bg-slate-600 rounded-full h-1.5 overflow-hidden">
+                         <div 
+                           className="h-full bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full transition-all duration-100 ease-out"
+                           style={{ width: `${Math.min((thinkingTimer / 5) * 100, 100)}%` }}
+                         ></div>
+                       </div>
+                     </div>
                   </div>
                 </div>
               )}
