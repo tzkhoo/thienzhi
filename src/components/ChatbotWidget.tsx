@@ -291,17 +291,31 @@ const ChatbotWidget = () => {
                   <div className="flex flex-col max-w-xs lg:max-w-md">
                     <span className="text-xs mb-1 text-yellow-400">Thien Zhi AI</span>
                      <div className="px-4 py-3 rounded-lg bg-slate-700 text-white border border-yellow-400/30 rounded-tl-none">
-                       <div className="flex items-center justify-between">
-                         <div className="flex space-x-1">
-                           <div className="w-2 h-2 bg-yellow-400 rounded-full animate-bounce"></div>
-                           <div className="w-2 h-2 bg-yellow-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                           <div className="w-2 h-2 bg-yellow-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                       <div className="flex space-x-1 mb-3">
+                         <div className="w-2 h-2 bg-yellow-400 rounded-full animate-bounce"></div>
+                         <div className="w-2 h-2 bg-yellow-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                         <div className="w-2 h-2 bg-yellow-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                       </div>
+                       
+                       {/* Thinking Status Button */}
+                       <div className="inline-flex items-center px-3 py-2 bg-gradient-to-r from-yellow-400/20 to-yellow-500/20 border border-yellow-400/40 rounded-full backdrop-blur-sm animate-pulse">
+                         <div className="flex items-center space-x-2">
+                           <div className="w-3 h-3 bg-yellow-400 rounded-full animate-pulse"></div>
+                           <span className="text-yellow-400 text-sm font-medium">
+                             I am thinking... ({thinkingTimer.toFixed(1)}s)
+                           </span>
                          </div>
-                         <div className="flex items-center space-x-2 text-xs text-gray-400">
-                           <span>{thinkingTimer.toFixed(1)}s</span>
-                           <span>/</span>
-                           <span>~5s</span>
+                         <div className="ml-3 text-gray-400 text-xs">
+                           Est. 5s
                          </div>
+                       </div>
+                       
+                       {/* Progress Bar */}
+                       <div className="mt-3 w-full bg-slate-600 rounded-full h-1.5 overflow-hidden">
+                         <div 
+                           className="h-full bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full transition-all duration-100 ease-out"
+                           style={{ width: `${Math.min((thinkingTimer / 5) * 100, 100)}%` }}
+                         ></div>
                        </div>
                      </div>
                   </div>
