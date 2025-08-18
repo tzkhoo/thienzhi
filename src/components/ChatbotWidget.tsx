@@ -125,7 +125,7 @@ const ChatbotWidget = () => {
       
       const botResponse = {
         id: messages.length + 2,
-        text: data.response || "Sorry, I couldn't process your request. Please try again.",
+        text: data.output || "Sorry, I couldn't process your request. Please try again.",
         isBot: true,
         timestamp: new Date()
       };
