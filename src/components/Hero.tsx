@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { userInfo } from "@/data/user-data";
 import CircularGallery from './CircularGallery';
 import CountUpCard from './CountUpCard';
@@ -7,6 +8,7 @@ import GradientText from './GradientText';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setIsVisible(true);
@@ -131,7 +133,7 @@ const Hero = () => {
                   </span>
                 </div>
                 <p className="text-gray-300 text-center text-xs md:text-sm font-medium">
-                  <span className="sm:hidden">HKD cash prize</span>
+                  <span className="sm:hidden">Cash Prize</span>
                   <span className="hidden sm:inline">Cash Prize Awarded</span>
                 </p>
               </div>
@@ -159,7 +161,7 @@ const Hero = () => {
               </button>
               <button 
                 className="px-4 sm:px-6 py-2 sm:py-3 border-2 border-primary text-primary rounded-full font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300 text-sm sm:text-base"
-                onClick={() => window.open('/cv', '_blank', 'noopener,noreferrer')}
+                onClick={() => navigate('/cv')}
               >
                 Thien Zhi's CV
               </button>

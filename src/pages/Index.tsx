@@ -12,7 +12,7 @@ import SplashCursor from '@/components/SplashCursor';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-emerald-950 to-purple-950 relative">
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-purple-950 relative">
       <AnimatedBackground />
       <SplashCursor SPLAT_RADIUS={0.06} SPLAT_FORCE={2400} />
       <div className="relative z-10">
