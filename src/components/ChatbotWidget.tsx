@@ -129,7 +129,21 @@ const ChatbotWidget = () => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       
-      const data = await response.json();
+      const responseText = await response.text();
+      console.log('Raw response text:', responseText);
+      
+      if (!responseText.trim()) {
+        throw new Error('Empty response from webhook - check your n8n workflow configuration');
+      }
+      
+      let data;
+      try {
+        data = JSON.parse(responseText);
+      } catch (parseError) {
+        console.error('JSON parse error:', parseError);
+        throw new Error(`Invalid JSON response: ${responseText.substring(0, 100)}`);
+      }
+      
       console.log('Response data:', data);
       
       const botResponse = {
