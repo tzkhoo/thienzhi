@@ -111,7 +111,7 @@ const ChatbotWidget = () => {
     
     try {
       console.log('Sending message to webhook:', currentMessage);
-      const response = await fetch('http://localhost:5678/webhook/ad30832c-1f6b-4293-8eec-85490817e62d', {
+      const response = await fetch('https://n8n-x972.onrender.com/webhook/ad30832c-1f6b-4293-8eec-85490817e62d', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
