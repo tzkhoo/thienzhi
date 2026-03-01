@@ -376,9 +376,9 @@ class App {
     this.onResize();
     this.createGeometry();
     this.createMedias(items, bend, borderRadius, textColor, font);
-    // Start positioned 2 items to the right from original position
+    // Start positioned at the beginning of the second copy (centers on first item)
     const firstWidth = (this.medias[0] as any).width;
-    this.scroll.current = this.scroll.target = firstWidth * (this.galleryLength - 1 + 2);
+    this.scroll.current = this.scroll.target = firstWidth * this.galleryLength;
     this.update();
     this.addEventListeners();
   }

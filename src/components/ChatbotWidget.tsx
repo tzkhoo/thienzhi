@@ -79,7 +79,7 @@ const ChatbotWidget = () => {
     // Feature currently disabled
     const disabledResponse = {
       id: messages.length + 1,
-      text: "Thien Zhi has currently disabled this function.",
+      text: "Thien Zhi has disabled this function. (Lazy to maintain cloud hosting for now hehe :>)",
       isBot: true,
       timestamp: new Date()
     };

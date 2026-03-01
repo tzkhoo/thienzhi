@@ -23,6 +23,7 @@ const Projects = () => {
     if (imagePath.includes('awards3.png')) return '/awards3.png';
     if (imagePath.includes('awards4.png')) return '/awards4.png';
     if (imagePath.includes('awards5.png')) return '/awards5.png';
+    if (imagePath.includes('awards_placeholder.png')) return '/awards_placeholder.png';
     // Return external URLs as-is
     return imagePath;
   };

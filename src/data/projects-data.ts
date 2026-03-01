@@ -8,11 +8,11 @@ export const projectsData = [
         title: "Hack The East 2026",
         description: "Won 25,000 HKD from hackathon.",
         longDescription: "Won 25,000 HKD from hackathon.",
-        role: "Winner",
+        role: "Champion",
         technologies: ["Hackathon", "Innovation"],
         period: "March 2026",
-        link: "#",
-        image: "awards1.png",
+        link: "https://hacktheeast.com/",
+        image: "/awards_placeholder.png",
         category: "Hackathon",
         status: "Hackathon"
     },
@@ -23,8 +23,8 @@ export const projectsData = [
         role: "Champion",
         technologies: ["AI", "Immersive Tech", "Consulting"],
         period: "Dec 2025",
-        link: "#",
-        image: "awards1.png",
+        link: "https://ug.hkubs.hku.hk/competition/art-of-intelligence-forum-the-ai-creative-challenge",
+        image: "/awards_placeholder.png",
         category: "AI & Entertainment",
         status: "Consulting Case Comp"
     },
@@ -35,8 +35,8 @@ export const projectsData = [
         role: "Champion",
         technologies: ["Retail Strategy", "Innovation", "Presentation"],
         period: "Nov 2025",
-        link: "#",
-        image: "awards1.png",
+        link: "https://hkujcesgri.hku.hk/event/the-fourth-kpmg-esg-case-competition/",
+        image: "/awards_placeholder.png",
         category: "Retail Strategy",
         status: "Consulting Case Comp"
     },
@@ -47,7 +47,7 @@ export const projectsData = [
         role: "Champion",
         technologies: ["RAG", "LLM", "AWS", "Google Cloud"],
         period: "Aug 2025",
-        link: "https://karkaram-frontend.vercel.app/",
+        link: "https://www.bochk.com/dam/more/bochkchallenge/2025/en.html",
         image: bochk,
         category: "AI Fintech",
         status: "Consulting Case Comp"
@@ -95,7 +95,7 @@ export const projectsData = [
         role: "Top 5",
         technologies: ["Business Strategy", "Market Analysis", "Presentation"],
         period: "Feb 2025",
-        link: "#",
+        link: "https://www.chamber.org.hk/bcc2024/",
         image: "awards1.png",
         category: "Business Competition",
         status: "Award"
@@ -119,7 +119,7 @@ export const projectsData = [
         role: "1st Runner Up",
         technologies: ["Business Strategy", "Market Research", "Financial Analysis"],
         period: "Jan 2024",
-        link: "#",
+        link: "https://www.chamber.org.hk/bcc2023/",
         image: "awards3.png",
         category: "Business Competition",
         status: "Award"
@@ -131,7 +131,7 @@ export const projectsData = [
         role: "Champion",
         technologies: ["Leadership", "Team Management", "Strategic Planning"],
         period: "Aug 2023",
-        link: "#",
+        link: "https://www.axiata-foundation.com/axiata-young-talent-programme/university-leadership-development-programme",
         image: "awards4.png",
         category: "Leadership",
         status: "Award"

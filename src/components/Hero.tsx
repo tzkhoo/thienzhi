@@ -15,18 +15,18 @@ const Hero = () => {
   }, []);
 
   const awardsItems = [
-    { image: "/1.png", text: "Image 1" },
-    { image: "/2.png", text: "Image 2" },
-    { image: "/3.png", text: "Image 3" },
-    { image: "/4.png", text: "Image 4" },
-    { image: "/5.png", text: "Image 5" },
-    { image: "/6.png", text: "Image 6" },
-    { image: "/7.png", text: "Image 7" },
-    { image: "/8.png", text: "Image 8" },
-    { image: "/9.png", text: "Image 9" },
-    { image: "/10.png", text: "Image 10" },
-    { image: "/11.png", text: "Image 11" },
     { image: "/12.png", text: "Image 12" },
+    { image: "/11.png", text: "Image 11" },
+    { image: "/10.png", text: "Image 10" },
+    { image: "/9.png", text: "Image 9" },
+    { image: "/8.png", text: "Image 8" },
+    { image: "/7.png", text: "Image 7" },
+    { image: "/6.png", text: "Image 6" },
+    { image: "/5.png", text: "Image 5" },
+    { image: "/4.png", text: "Image 4" },
+    { image: "/3.png", text: "Image 3" },
+    { image: "/2.png", text: "Image 2" },
+    { image: "/1.png", text: "Image 1" },
   ];
 
   return (
@@ -56,7 +56,7 @@ const Hero = () => {
                   {isVisible ? (
                     <CountUp
                       start={0}
-                      end={9}
+                      end={7}
                       duration={4}
                     />
                   ) : (
@@ -64,17 +64,17 @@ const Hero = () => {
                   )}
                 </div>
                 <p className="text-gray-300 text-center text-xs md:text-sm font-medium">
-                  Gold/Silver medals
+                  Champions
                 </p>
               </div>
               
-              {/* Mobile: Awards */}
+              {/* Mobile: Champions */}
               <div className="flex sm:hidden flex-col items-center justify-center bg-slate-800/30 backdrop-blur-sm rounded-xl border border-slate-700/50 p-3 hover:bg-slate-800/40 transition-all duration-300 hover:scale-105 hover:border-primary/30 flex-1">
                 <div className="text-xl font-bold text-primary mb-1">
                   {isVisible ? (
                     <CountUp
                       start={0}
-                      end={9}
+                      end={7}
                       duration={4}
                     />
                   ) : (
@@ -82,17 +82,17 @@ const Hero = () => {
                   )}
                 </div>
                 <p className="text-gray-300 text-center text-xs font-medium">
-                  Awards
+                  Champions
                 </p>
               </div>
               
-              {/* Desktop: Case Comp & Hackathons, Mobile: Competitions */}
+              {/* Desktop: Case Comp & Hackathon Wins, Mobile: Wins */}
               <div className="flex flex-col items-center justify-center bg-slate-800/30 backdrop-blur-sm rounded-xl border border-slate-700/50 p-3 sm:p-4 hover:bg-slate-800/40 transition-all duration-300 hover:scale-105 hover:border-primary/30 flex-1 sm:w-52">
                 <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-1">
                   {isVisible ? (
                     <CountUp
                       start={0}
-                      end={25}
+                      end={15}
                       duration={4.5}
                     />
                   ) : (
@@ -100,8 +100,8 @@ const Hero = () => {
                   )}
                 </div>
                 <p className="text-gray-300 text-center text-xs md:text-sm font-medium">
-                  <span className="sm:hidden">Competitions</span>
-                  <span className="hidden sm:inline">Case Comp & Hackathons</span>
+                  <span className="sm:hidden">Comp Wins</span>
+                  <span className="hidden sm:inline">Case Comp & Hackathon Wins</span>
                 </p>
               </div>
               
