@@ -12,7 +12,7 @@ export const projectsData = [
         technologies: ["Hackathon", "Innovation"],
         period: "March 2026",
         link: "https://hacktheeast.com/",
-        image: "/awards_placeholder.png",
+        image: "/Hack.png",
         category: "Hackathon",
         status: "Hackathon"
     },
@@ -24,7 +24,7 @@ export const projectsData = [
         technologies: ["AI", "Immersive Tech", "Consulting"],
         period: "Dec 2025",
         link: "https://ug.hkubs.hku.hk/competition/art-of-intelligence-forum-the-ai-creative-challenge",
-        image: "/awards_placeholder.png",
+        image: "/IBM_Logo.png",
         category: "AI & Entertainment",
         status: "Consulting Case Comp"
     },
@@ -36,7 +36,7 @@ export const projectsData = [
         technologies: ["Retail Strategy", "Innovation", "Presentation"],
         period: "Nov 2025",
         link: "https://hkujcesgri.hku.hk/event/the-fourth-kpmg-esg-case-competition/",
-        image: "/awards_placeholder.png",
+        image: "/KPMG.png",
         category: "Retail Strategy",
         status: "Consulting Case Comp"
     },

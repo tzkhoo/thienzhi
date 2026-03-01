@@ -9,8 +9,8 @@ import OwImg from "@/assets/ow.jpg";
 const Projects = () => {
   const navigate = useNavigate();
   
-  // Show only first 3 projects on homepage
-  const featuredProjects = projectsData.slice(0, 3);
+  // Show IBM, KPMG, BOCHK 2025 — exclude Hack The East
+  const featuredProjects = projectsData.filter(p => p.title !== "Hack The East 2026").slice(0, 3);
 
   const getImageSrc = (imagePath: string) => {
     // Handle local asset paths
