@@ -38,8 +38,6 @@ const Navigation = () => {
         }
         
         setActiveSection(currentSection);
-      } else if (location.pathname === '/projects') {
-        setActiveSection('projects');
       } else if (location.pathname === '/awards') {
         setActiveSection('awards');
       }
@@ -79,7 +77,6 @@ const Navigation = () => {
 
   const getNavItemStyle = (sectionId: string) => {
     const isActive = activeSection === sectionId || 
-      (location.pathname === '/projects' && sectionId === 'projects') ||
       (location.pathname === '/awards' && sectionId === 'awards');
     
     return `text-gray-300 transition-all duration-500 ease-out transform px-3 py-1.5 rounded-full text-sm font-medium relative ${
@@ -97,12 +94,10 @@ const Navigation = () => {
       { id: 'case-comp', name: 'Case Comp' },
       { id: 'community', name: 'Community' },
       { id: 'skills', name: 'Skills' },
-      { id: 'projects', name: 'Projects' },
       { id: 'awards', name: 'Awards' }
     ];
     
-    const currentActive = location.pathname === '/projects' ? 'projects' : 
-                         location.pathname === '/awards' ? 'awards' : activeSection;
+    const currentActive = location.pathname === '/awards' ? 'awards' : activeSection;
     
     const activeIndex = navItems.findIndex(item => item.id === currentActive);
     
@@ -121,7 +116,6 @@ const Navigation = () => {
   };
 
   const getCurrentSectionName = () => {
-    if (location.pathname === '/projects') return 'Projects';
     if (location.pathname === '/awards') return 'Awards';
     
     switch (activeSection) {
@@ -182,11 +176,9 @@ const Navigation = () => {
                   { name: 'Case\u00A0Comp', action: () => scrollToSection('case-comp'), id: 'case-comp' },
                   { name: 'Community', action: () => scrollToSection('community'), id: 'community' },
                   { name: 'Skills', action: () => scrollToSection('skills'), id: 'skills' },
-                  { name: 'Projects', action: () => navigate('/projects'), id: 'projects' },
                   { name: 'Awards', action: () => navigate('/awards'), id: 'awards' }
                 ].map((item, index) => {
                   const isActive = activeSection === item.id || 
-                    (location.pathname === '/projects' && item.id === 'projects') ||
                     (location.pathname === '/awards' && item.id === 'awards');
                   
                   return (
@@ -201,7 +193,7 @@ const Navigation = () => {
                       style={{
                         width: '90px',
                         height: '36px',
-                        marginRight: index < 7 ? '6px' : '0px'
+                        marginRight: index < 6 ? '6px' : '0px'
                       }}
                     >
                       <span className="text-center">{item.name}</span>
@@ -231,7 +223,6 @@ const Navigation = () => {
               { name: 'Case Comp', action: () => scrollToSection('case-comp') },
               { name: 'Community', action: () => scrollToSection('community') },
               { name: 'Skills', action: () => scrollToSection('skills') },
-              { name: 'Projects', action: () => navigate('/projects') },
               { name: 'Awards', action: () => navigate('/awards') }
             ].map((item) => (
               <button
@@ -283,7 +274,6 @@ const Navigation = () => {
               { name: 'Case Comp', action: () => scrollToSection('case-comp') },
               { name: 'Community', action: () => scrollToSection('community') },
               { name: 'Skills', action: () => scrollToSection('skills') },
-              { name: 'Projects', action: () => navigate('/projects') },
               { name: 'Awards', action: () => navigate('/awards') }
             ].map((item) => (
               <button

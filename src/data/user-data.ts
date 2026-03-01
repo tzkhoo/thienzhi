@@ -34,9 +34,10 @@ export const userInfo = {
         "role": "Data Engineering Analyst",
         "period": "Jun 2025 – Present",
         "responsibilities": [
-          "AI Agent: Developed a WhatsApp AI agent utilizing RAG to deliver accurate agentic workflows and enhance user engagement.",
-          "Chatbot: Created a chatbot for website and email inquiries, automating customer support and improving response times.",
-          "Sales Leads: Generated business leads in multiple HK industries by leveraging Google Cloud APIs for automated data extraction and outreach ",
+          "Project Manager: Led a 6-member team by initiating AI and tech transformation projects across the company",
+          "Sales Automation: Generated HKD200,000 extra ARR, securing 11 key clients from 2000+ leads using self-developed end-to-end lead generation software that fully automated client prospecting, research, outreach and engagement.",
+          "RAG AI Chatbot: 1000+ monthly enquiries resolved via custom chatbot built for company web, email and Whatsapp",
+          "CRM System: 30% efficiency boost for 50+ staff using self-developed internal CRM designed for advanced analytics",
         ]
       },
       {
@@ -44,7 +45,10 @@ export const userInfo = {
         "role": "Business Development Analyst",
         "period": "Jun 2024 – Aug 2024",
         "responsibilities": [
-          "Conduct market research and analysis for HK edtech industry, facilitated strategic proposals for market expansion into Asia, and generating business leads through B2B and B2C marketing",
+          "Pitch Deck: Top 8 Hult Prize placement secured by leading the design and structure of company's pitching storyline",
+          "Market Research: 2-year Southeast Asia market entry strategy developed via competitor analysis and benchmarking",
+          "Marketing Campaign: 15% engagement growth across 3 platforms (IG, FB, LinkedIn) through social media content",
+          "Website Revamp: 25% more monthly visitors achieved by redesigning content, structure and visuals to enhance UIUX",
         ]
       }],
 

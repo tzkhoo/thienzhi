@@ -24,6 +24,9 @@ const Hero = () => {
     { image: "/7.png", text: "Image 7" },
     { image: "/8.png", text: "Image 8" },
     { image: "/9.png", text: "Image 9" },
+    { image: "/10.png", text: "Image 10" },
+    { image: "/11.png", text: "Image 11" },
+    { image: "/12.png", text: "Image 12" },
   ];
 
   return (
@@ -109,26 +112,26 @@ const Hero = () => {
                     {isVisible ? (
                       <CountUp
                         start={0}
-                        end={250}
+                        end={300}
                         duration={5}
                         suffix="K"
                         separator=","
                       />
                     ) : (
-                      '250K'
+                      '300K'
                     )}
                   </span>
                   <span className="hidden sm:inline">
                     {isVisible ? (
                       <CountUp
                         start={0}
-                        end={250000}
+                        end={300000}
                         duration={5}
                         prefix="HKD"
                         separator=","
                       />
                     ) : (
-                      'HKD250,000'
+                      'HKD300,000'
                     )}
                   </span>
                 </div>

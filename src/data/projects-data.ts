@@ -5,9 +5,45 @@ import amploy from '@/assets/Amploy.png';
 
 export const projectsData = [
     {
+        title: "Hack The East 2026",
+        description: "Won 25,000 HKD from hackathon.",
+        longDescription: "Won 25,000 HKD from hackathon.",
+        role: "Winner",
+        technologies: ["Hackathon", "Innovation"],
+        period: "March 2026",
+        link: "#",
+        image: "awards1.png",
+        category: "Hackathon",
+        status: "Hackathon"
+    },
+    {
+        title: "IBM Consulting 2025",
+        description: "Won 1st place by developing and pitching a revolutionary AI immersive entertainment platform to HK industry leaders.",
+        longDescription: "Won 1st place by developing and pitching a revolutionary AI immersive entertainment platform to HK industry leaders.",
+        role: "Champion",
+        technologies: ["AI", "Immersive Tech", "Consulting"],
+        period: "Dec 2025",
+        link: "#",
+        image: "awards1.png",
+        category: "AI & Entertainment",
+        status: "Consulting Case Comp"
+    },
+    {
+        title: "KPMG Case Comp 2025",
+        description: "Won 1st place and Best Speaker Award among 11000+ participants across all of China by innovating retail strategies.",
+        longDescription: "Won 1st place and Best Speaker Award among 11000+ participants across all of China by innovating retail strategies.",
+        role: "Champion",
+        technologies: ["Retail Strategy", "Innovation", "Presentation"],
+        period: "Nov 2025",
+        link: "#",
+        image: "awards1.png",
+        category: "Retail Strategy",
+        status: "Consulting Case Comp"
+    },
+    {
         title: "BOCHK Case Challenge 2025",
-        description: "To be written.",
-        longDescription: "To be written.",
+        description: "1st place among 900+ participants and awarded HKD120,000 for AI Agents + Wealth Management.",
+        longDescription: "1st place among 900+ participants and awarded HKD120,000 for AI Agents + Wealth Management.",
         role: "Champion",
         technologies: ["RAG", "LLM", "AWS", "Google Cloud"],
         period: "Aug 2025",
@@ -17,21 +53,9 @@ export const projectsData = [
         status: "Consulting Case Comp"
     },
     {
-        title: "BNP Paribas Challenge 2025",
-        description: "To be written.",
-        longDescription: "To be written.",
-        role: "Champion",
-        technologies: ["RAG", "LLM", "AWS", "Google Cloud"],
-        period: "April 2025",
-        link: "https://www.bnpparibas.com.hk/en/about-us/sustainable-finance/university-challenge/",
-        image: bnp,
-        category: "Finance",
-        status: "Consulting Case Comp"
-    },
-    {
         title: "Oliver Wyman Impact 2025",
-        description: "To be written.",
-        longDescription: "To be written.",
+        description: "Won 2nd place among 1200+ participants by proposing strategic market entry in Hong Kong's E-Commerce landscape.",
+        longDescription: "Won 2nd place among 1200+ participants by proposing strategic market entry in Hong Kong's E-Commerce landscape.",
         role: "1st Runner Up",
         technologies: ["Blender", "Three.js", "Express", "MongoDB"],
         period: "June 2025",
@@ -41,9 +65,21 @@ export const projectsData = [
         status: "Consulting Case Comp"
     },
     {
+        title: "BNP Paribas Challenge 2025",
+        description: "Won 1st place by developing Gen Z clients acquisition plan while leading the project and pitch design as team leader.",
+        longDescription: "Won 1st place by developing Gen Z clients acquisition plan while leading the project and pitch design as team leader.",
+        role: "Champion",
+        technologies: ["RAG", "LLM", "AWS", "Google Cloud"],
+        period: "April 2025",
+        link: "https://www.bnpparibas.com.hk/en/about-us/sustainable-finance/university-challenge/",
+        image: bnp,
+        category: "Finance",
+        status: "Consulting Case Comp"
+    },
+    {
         title: "BOCHK Case Challenge 2024",
-        description: "To be written..",
-        longDescription: "To be written.",
+        description: "1st Runner Up in the BOCHK Case Challenge 2024.",
+        longDescription: "1st Runner Up in the BOCHK Case Challenge 2024.",
         role: "1st Runner Up",
         technologies: ["OpenCV", "TensorFlow", "AWS"],
         period: "Aug 2024",

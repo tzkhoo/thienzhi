@@ -1,12 +1,9 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Briefcase, ArrowRight } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Briefcase } from 'lucide-react';
 import { userInfo } from "@/data/user-data";
 import StarBorder from '@/components/StarBorder';
 
 const Experience = () => {
-  const navigate = useNavigate();
   return (
     <section id="experience" className="py-20 relative">
       <div className="container mx-auto px-6">
@@ -50,16 +47,7 @@ const Experience = () => {
                           </li>
                         ))}
                       </ul>
-                      {exp.role === "Data Engineering Analyst" && (
-                        <Button 
-                          onClick={() => navigate(`/experience-projects/${index}`)}
-                          variant="outline"
-                          className="w-full bg-primary/10 border-primary/30 text-primary hover:bg-primary/20 hover:text-primary-foreground"
-                        >
-                          View My Projects
-                          <ArrowRight className="w-4 h-4 ml-2" />
-                        </Button>
-                      )}
+
                     </div>
                   </CardContent>
                 </>

@@ -76,64 +76,16 @@ const ChatbotWidget = () => {
   const handleSendMessage = async () => {
     if (!message.trim() || isLoading) return;
     
-    // Check rate limit
-    if (!checkRateLimit()) {
-      const rateLimitResponse = {
-        id: messages.length + 1,
-        text: "I appreciate your enthusiasm! However, I need to take a short break. Please try again in a bit.",
-        isBot: true,
-        timestamp: new Date()
-      };
-      setMessages(prev => [...prev, rateLimitResponse]);
-      return;
-    }
-    
-    const userMessage = {
+    // Feature currently disabled
+    const disabledResponse = {
       id: messages.length + 1,
-      text: message,
-      isBot: false,
+      text: "Thien Zhi has currently disabled this function.",
+      isBot: true,
       timestamp: new Date()
     };
-    
-    setMessages(prev => [...prev, userMessage]);
-    updateRateLimit(); // Track this message for rate limiting
-    const currentMessage = message;
+    setMessages(prev => [...prev, disabledResponse]);
     setMessage('');
-    setIsLoading(true);
-    
-    try {
-      const response = await fetch('https://wonder4.app.n8n.cloud/webhook/ad30832c-1f6b-4293-8eec-85490817e62d', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          message: currentMessage
-        })
-      });
-      
-      const data = await response.json();
-      
-      const botResponse = {
-        id: messages.length + 2,
-        text: data.response || "Sorry, I couldn't process your request. Please try again.",
-        isBot: true,
-        timestamp: new Date()
-      };
-      
-      setMessages(prev => [...prev, botResponse]);
-    } catch (error) {
-      console.error('Error calling webhook:', error);
-      const errorResponse = {
-        id: messages.length + 2,
-        text: "Sorry, I'm having trouble connecting right now. Please try again later.",
-        isBot: true,
-        timestamp: new Date()
-      };
-      setMessages(prev => [...prev, errorResponse]);
-    } finally {
-      setIsLoading(false);
-    }
+    return;
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
