@@ -10,11 +10,17 @@ import AnimatedBackground from '@/components/AnimatedBackground';
 import ChatbotWidget from '@/components/ChatbotWidget';
 import SplashCursor from '@/components/SplashCursor';
 
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-purple-950 relative">
       <AnimatedBackground />
-      <SplashCursor SPLAT_RADIUS={0.06} SPLAT_FORCE={2400} />
+      {isMobile ? (
+        <SplashCursor SPLAT_RADIUS={0.03} SPLAT_FORCE={800} DENSITY_DISSIPATION={6} VELOCITY_DISSIPATION={4} />
+      ) : (
+        <SplashCursor SPLAT_RADIUS={0.06} SPLAT_FORCE={2400} />
+      )}
       <div className="relative z-10">
         <Navigation />
         <Hero />
