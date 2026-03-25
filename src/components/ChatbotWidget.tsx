@@ -48,6 +48,7 @@ const ChatbotWidget = () => {
       id: 1, 
       text: "Hi I am a virtual replica of Thien Zhi, ask me anything about myself!", 
       isBot: true, 
+      isDisabled: false,
       timestamp: new Date() 
     }
   ]);
@@ -76,14 +77,21 @@ const ChatbotWidget = () => {
   const handleSendMessage = async () => {
     if (!message.trim() || isLoading) return;
     
-    // Feature currently disabled
-    const disabledResponse = {
+    const userMsg = {
       id: messages.length + 1,
-      text: "Thien Zhi has disabled this function. (Lazy to maintain cloud hosting for now hehe :>)",
-      isBot: true,
+      text: message.trim(),
+      isBot: false,
+      isDisabled: false,
       timestamp: new Date()
     };
-    setMessages(prev => [...prev, disabledResponse]);
+    const disabledResponse = {
+      id: messages.length + 2,
+      text: "Thien Zhi has disabled this function. (Lazy to maintain cloud hosting for now hehe :>)",
+      isBot: true,
+      isDisabled: true,
+      timestamp: new Date()
+    };
+    setMessages(prev => [...prev, userMsg, disabledResponse]);
     setMessage('');
     return;
   };
@@ -174,7 +182,9 @@ const ChatbotWidget = () => {
                     {/* Message content */}
                     <div
                       className={`px-4 py-3 rounded-lg ${
-                        msg.isBot
+                        msg.isDisabled
+                          ? 'bg-gradient-to-r from-red-900/50 to-amber-900/40 text-amber-100 border border-red-400/40 rounded-tl-none'
+                          : msg.isBot
                           ? 'bg-slate-700 text-white border border-yellow-400/30 rounded-tl-none'
                           : 'bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-tr-none'
                       }`}
