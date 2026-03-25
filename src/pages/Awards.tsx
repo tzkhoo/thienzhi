@@ -18,6 +18,8 @@ const AwardsPage = () => {
     if (imagePath.includes('awards4.png')) return '/awards4.png';
     if (imagePath.includes('awards5.png')) return '/awards5.png';
     if (imagePath.includes('awards_placeholder.png')) return '/awards_placeholder.png';
+    if (imagePath.includes('Towngas.png')) return '/Towngas.png';
+    if (imagePath.includes('NWD.png')) return '/NWD.png';
     // Return external URLs as-is
     return imagePath;
   };

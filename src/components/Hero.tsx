@@ -15,6 +15,7 @@ const Hero = () => {
   }, []);
 
   const awardsItems = [
+    { image: "/13.png", text: "Image 13" },
     { image: "/12.png", text: "Image 12" },
     { image: "/11.png", text: "Image 11" },
     { image: "/10.png", text: "Image 10" },
@@ -56,7 +57,7 @@ const Hero = () => {
                   {isVisible ? (
                     <CountUp
                       start={0}
-                      end={7}
+                      end={9}
                       duration={4}
                     />
                   ) : (
@@ -74,7 +75,7 @@ const Hero = () => {
                   {isVisible ? (
                     <CountUp
                       start={0}
-                      end={7}
+                      end={9}
                       duration={4}
                     />
                   ) : (
@@ -92,7 +93,7 @@ const Hero = () => {
                   {isVisible ? (
                     <CountUp
                       start={0}
-                      end={15}
+                      end={17}
                       duration={4.5}
                     />
                   ) : (
@@ -112,26 +113,26 @@ const Hero = () => {
                     {isVisible ? (
                       <CountUp
                         start={0}
-                        end={300}
+                        end={340}
                         duration={5}
                         suffix="K"
                         separator=","
                       />
                     ) : (
-                      '300K'
+                      '340K'
                     )}
                   </span>
                   <span className="hidden sm:inline">
                     {isVisible ? (
                       <CountUp
                         start={0}
-                        end={300000}
+                        end={340000}
                         duration={5}
                         prefix="HKD"
                         separator=","
                       />
                     ) : (
-                      'HKD300,000'
+                      'HKD340,000'
                     )}
                   </span>
                 </div>

@@ -5,6 +5,30 @@ import amploy from '@/assets/Amploy.png';
 
 export const projectsData = [
     {
+        title: "Towngas Case Comp 2026 (HKGCC)",
+        description: "Won 1st Place and secured HKD 20,000 for smart and green energy strategies.",
+        longDescription: "Won 1st Place and secured HKD 20,000 by proposing strategies for community engagement in hydrogen initiatives, driving smart and green energy adoption.",
+        role: "Champion",
+        technologies: ["Energy", "Sustainability", "Consulting"],
+        period: "2026",
+        link: "https://www.chamber.org.hk/bcc2024/",
+        image: "/Towngas.png",
+        category: "Energy",
+        status: "Consulting Case Comp"
+    },
+    {
+        title: "NWD Case Comp 2026 (HKGCC)",
+        description: "Won 1st Place and secured HKD 20,000 for Northern Metropolis development models.",
+        longDescription: "Won 1st Place and secured HKD 20,000 by exploring feasible and financially sustainable development models to expedite the Northern Metropolis project.",
+        role: "Champion",
+        technologies: ["Property", "Urban Development", "Consulting"],
+        period: "2026",
+        link: "https://www.chamber.org.hk/bcc2024/",
+        image: "/NWD.png",
+        category: "Property",
+        status: "Consulting Case Comp"
+    },
+    {
         title: "Hack The East 2026",
         description: "Won 25,000 HKD from hackathon.",
         longDescription: "Won 25,000 HKD from hackathon.",
